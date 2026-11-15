@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Stonetown – návrh C: Výprava</title>
+    <meta name="description" content="Ukázkový návrh webu westernového městečka Stonetown u Humpolce. Varianta C: Výprava." />
+    <meta name="theme-color" content="#1d2a44" />
+    <link rel="preload" href="../fonts/Grandstander-var-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../fonts/fonts.css" />
+    <link rel="stylesheet" href="../shared/base.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="../shared/data.js" defer></script>
+    <script src="../shared/app.js" defer></script>
+    <script src="./trail.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#obsah">Přeskočit na obsah</a>
+
+    <div class="demo">
+      <span>Ukázkový návrh, ne oficiální web. Údaje nejsou závazné. Oficiální stránky: <a href="https://www.stonetown.cz/">stonetown.cz</a></span>
+      <nav class="demo__nav" aria-label="Varianty návrhu">
+        <a href="../">Přehled</a>
+        <a href="../a/">A</a>
+        <a href="../b/">B</a>
+        <a href="../c/" aria-current="page">C</a>
+      </nav>
+    </div>
+
+    <header class="top">
+      <a class="top__brand" href="#obsah">Stonetown</a>
+      <nav class="top__nav" aria-label="Hlavní navigace">
+        <a href="#zkusit">Co si zkusíte</a>
+        <a href="#programy">Výlety a tábory</a>
+        <a href="#program">Program</a>
+        <a href="#cesta">Cesta</a>
+      </nav>
+      <a class="btn btn--small" href="#poptavka">Poptat termín</a>
+    </header>
+
+    <main id="obsah">
+      <section class="hero">
+        <div class="hero__text">
+          <h1 class="hero__h">Výprava na Divoký západ začíná u&nbsp;Humpolce</h1>
+          <p class="hero__lead">Stonetown je westernové městečko v lese. Děti tu střílí z luku, hází lasem a rýžují zlato. Dospělí to obvykle zkusí taky.</p>
+          <div class="hero__cta">
+            <a class="btn" href="#poptavka">Poptat školní výlet</a>
+            <a class="btn btn--white" href="#zkusit">Co si u nás zkusíte</a>
+          </div>
+        </div>
+        <figure class="card-photo">
+          <picture>
+            <source media="(max-width: 700px)" srcset="../img/ulice-800.webp" />
+            <img src="../img/ulice-1600.webp" width="1600" height="1200" alt="Hlavní ulice Stonetownu: dřevěné domy s verandami, banka, obchod s plechovým zbožím a na konci ulice bílý kostel" fetchpriority="high" />
+          </picture>
+          <figcaption>Mainstreet. Vzadu kostel se zvonem.</figcaption>
+        </figure>
+      </section>
+
+      <div class="trail" data-trail>
+        <div class="trail__line" aria-hidden="true"><span data-trail-fill></span></div>
+
+        <section class="stop" id="otevreno">
+          <span class="stop__dot" aria-hidden="true"></span>
+          <h2 class="h2">Než vyrazíte</h2>
+          <div class="before">
+            <div class="board board--sand">
+              <h3>V roce 2026 je pro veřejnost dočasně zavřeno</h3>
+              <p>Sezónu 2027 sem doplníme, jakmile bude jasná. Školy, oddíly a skupiny se na termín mohou ptát už teď.</p>
+              <a class="link" href="#poptavka">Zeptat se na termín</a>
+            </div>
+            <dl class="quick">
+              <div><dt>Vstupné</dt><dd>100 Kč</dd></div>
+              <div><dt>Děti do 120 cm</dt><dd>zdarma</dd></div>
+              <div><dt>Parkování</dt><dd>zdarma</dd></div>
+              <div><dt>Na návštěvu</dt><dd>2,5 hodiny</dd></div>
+            </dl>
+          </div>
+        </section>
+
+        <section class="stop" id="zkusit">
+          <span class="stop__dot" aria-hidden="true"></span>
+          <h2 class="h2">Co si zkusíte</h2>
+          <p class="lead">Osm stanovišť a u každého někdo, kdo poradí nebo to předvede.</p>
+          <ul class="acts">
+            <li class="act">
+              <svg class="stamp stamp--red" style="--rot:-8deg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+                <defs><path id="ring0" d="M60 60 m-45 0 a45 45 0 1 1 90 0 a45 45 0 1 1 -90 0" /></defs>
+                <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="4" />
+                <circle cx="60" cy="60" r="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3" />
+                <text class="stamp__ring"><textPath href="#ring0" textLength="278">STONETOWN ★ KAMENICE U HUMPOLCE ★</textPath></text>
+                <text class="stamp__word" x="60" y="65.4" text-anchor="middle" font-size="15">LUK</text>
+              </svg>
+              <h3>Luk</h3>
+              <p>Střelba na terč pro děti i dospělé.</p>
+            </li>
+            <li class="act">
+              <svg class="stamp stamp--navy" style="--rot:5deg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+                <defs><path id="ring1" d="M60 60 m-45 0 a45 45 0 1 1 90 0 a45 45 0 1 1 -90 0" /></defs>
+                <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="4" />
+                <circle cx="60" cy="60" r="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3" />
+                <text class="stamp__ring"><textPath href="#ring1" textLength="278">STONETOWN ★ KAMENICE U HUMPOLCE ★</textPath></text>
+                <text class="stamp__word" x="60" y="64.5" text-anchor="middle" font-size="12.5">TOMAHAWK</text>
+              </svg>
+              <h3>Tomahawk a nože</h3>
+              <p>Hod na dřevěný terč.</p>
+            </li>
+            <li class="act">
+              <svg class="stamp stamp--green" style="--rot:-4deg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+                <defs><path id="ring2" d="M60 60 m-45 0 a45 45 0 1 1 90 0 a45 45 0 1 1 -90 0" /></defs>
+                <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="4" />
+                <circle cx="60" cy="60" r="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3" />
+                <text class="stamp__ring"><textPath href="#ring2" textLength="278">STONETOWN ★ KAMENICE U HUMPOLCE ★</textPath></text>
+                <text class="stamp__word" x="60" y="65.4" text-anchor="middle" font-size="15">LASO</text>
+              </svg>
+              <h3>Laso a bič</h3>
+              <p>Ukážeme, jak laso roztočit.</p>
+            </li>
+            <li class="act">
+              <svg class="stamp stamp--red" style="--rot:9deg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+                <defs><path id="ring3" d="M60 60 m-45 0 a45 45 0 1 1 90 0 a45 45 0 1 1 -90 0" /></defs>
+                <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="4" />
+                <circle cx="60" cy="60" r="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3" />
+                <text class="stamp__ring"><textPath href="#ring3" textLength="278">STONETOWN ★ KAMENICE U HUMPOLCE ★</textPath></text>
+                <text class="stamp__word" x="60" y="64.5" text-anchor="middle" font-size="12.5">PODKOVA</text>
+              </svg>
+              <h3>Podkova</h3>
+              <p>Hod podkovou na kolík.</p>
+            </li>
+            <li class="act">
+              <svg class="stamp stamp--navy" style="--rot:-6deg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+                <defs><path id="ring4" d="M60 60 m-45 0 a45 45 0 1 1 90 0 a45 45 0 1 1 -90 0" /></defs>
+                <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="4" />
+                <circle cx="60" cy="60" r="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3" />
+                <text class="stamp__ring"><textPath href="#ring4" textLength="278">STONETOWN ★ KAMENICE U HUMPOLCE ★</textPath></text>
+                <text class="stamp__word" x="60" y="65.4" text-anchor="middle" font-size="15">ZLATO</text>
+              </svg>
+              <h3>Rýžování zlata</h3>
+              <p>Pánev, voda a trpělivost.</p>
+            </li>
+            <li class="act">
+              <svg class="stamp stamp--green" style="--rot:7deg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+                <defs><path id="ring5" d="M60 60 m-45 0 a45 45 0 1 1 90 0 a45 45 0 1 1 -90 0" /></defs>
+                <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="4" />
+                <circle cx="60" cy="60" r="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3" />
+                <text class="stamp__ring"><textPath href="#ring5" textLength="278">STONETOWN ★ KAMENICE U HUMPOLCE ★</textPath></text>
+                <text class="stamp__word" x="60" y="64.0" text-anchor="middle" font-size="11">STŘELNICE</text>
+              </svg>
+              <h3>Střelnice</h3>
+              <p>Na plechovky z dobových zbraní.</p>
+            </li>
+            <li class="act">
+              <svg class="stamp stamp--red" style="--rot:-3deg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+                <defs><path id="ring6" d="M60 60 m-45 0 a45 45 0 1 1 90 0 a45 45 0 1 1 -90 0" /></defs>
+                <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="4" />
+                <circle cx="60" cy="60" r="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3" />
+                <text class="stamp__ring"><textPath href="#ring6" textLength="278">STONETOWN ★ KAMENICE U HUMPOLCE ★</textPath></text>
+                <text class="stamp__word" x="60" y="65.4" text-anchor="middle" font-size="15">DÍLNY</text>
+              </svg>
+              <h3>Dílny</h3>
+              <p>Kožený váček, přívěsek, provaz nebo ruční papír.</p>
+            </li>
+            <li class="act">
+              <svg class="stamp stamp--navy" style="--rot:6deg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+                <defs><path id="ring7" d="M60 60 m-45 0 a45 45 0 1 1 90 0 a45 45 0 1 1 -90 0" /></defs>
+                <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="4" />
+                <circle cx="60" cy="60" r="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3" />
+                <text class="stamp__ring"><textPath href="#ring7" textLength="278">STONETOWN ★ KAMENICE U HUMPOLCE ★</textPath></text>
+                <text class="stamp__word" x="60" y="65.4" text-anchor="middle" font-size="15">MUZEUM</text>
+              </svg>
+              <h3>Muzeum</h3>
+              <p>Jak se osidloval Divoký západ.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="stop" id="programy">
+          <span class="stop__dot" aria-hidden="true"></span>
+          <h2 class="h2">Výlety, tábory a akce pro skupiny</h2>
+          <p class="lead">Vyberte program a rovnou uvidíte dny, kdy je místo. Rezervace je potřeba vždy, jídlo zařídíme po domluvě.</p>
+          <div class="progs" data-programs></div>
+          <p class="small">Termíny a kapacity jsou v téhle ukázce vzorové. Ceny školních programů vycházejí z dřívějších sezón.</p>
+        </section>
+
+        <section class="stop" id="poptavka">
+          <span class="stop__dot" aria-hidden="true"></span>
+          <h2 class="h2">Poptávka termínu</h2>
+          <p class="lead">Formulář se přizpůsobí programu, který vyberete. Hlídá velikost skupiny a rovnou počítá odhad ceny.</p>
+          <div class="board board--white board--form" data-inquiry></div>
+        </section>
+
+        <section class="stop" id="program">
+          <span class="stop__dot" aria-hidden="true"></span>
+          <h2 class="h2">Program 2026</h2>
+          <p class="lead">Takhle vypadal poslední vyhlášený rok. Termíny na rok 2027 doplníme.</p>
+          <ol class="evs" data-events></ol>
+        </section>
+
+        <section class="stop" id="cesta">
+          <span class="stop__dot" aria-hidden="true"></span>
+          <h2 class="h2">Jak se k nám dostanete</h2>
+          <div class="ways">
+            <div class="board board--white">
+              <h3>Autem</h3>
+              <p>Z dálnice D1 sjeďte na exitu 90 u Humpolce. Dál vás na parkoviště dovedou cedule Stonetown.</p>
+            </div>
+            <div class="board board--white">
+              <h3>Vlakem</h3>
+              <p>Vystupte na zastávce Kamenice u Humpolce na trati Havlíčkův Brod – Humpolec a jděte po modré turistické značce.</p>
+            </div>
+            <div class="board board--sand">
+              <h3>Adresa</h3>
+              <p>Kamenice 103<br />582 55 Herálec</p>
+              <a class="link" href="https://www.google.com/maps/search/?api=1&query=49.52155%2C15.41825">Otevřít v mapě</a>
+            </div>
+          </div>
+          <figure class="card-photo card-photo--wide">
+            <picture>
+              <source media="(max-width: 700px)" srcset="../img/zima-900.webp" />
+              <img src="../img/zima-1800.webp" width="1800" height="808" alt="Zasněžená hlavní ulice Stonetownu s obchodem General Store" loading="lazy" />
+            </picture>
+            <figcaption>Stonetown v zimě, kdy patří zimnímu táboření.</figcaption>
+          </figure>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <div class="foot__in">
+        <div>
+          <p class="foot__name">Stonetown</p>
+          <p>Westernové městečko Stonetown, z.s.<br />Kamenice 103, 582 55 Herálec</p>
+        </div>
+        <div>
+          <h2 class="foot__h">Napište nebo zavolejte</h2>
+          <p><a href="mailto:info@stonetown.cz">info@stonetown.cz</a><br /><a href="tel:+420776706191">+420 776 706 191</a></p>
+          <p>Tábory: <a href="mailto:tabor@stonetown.cz">tabor@stonetown.cz</a></p>
+        </div>
+        <div>
+          <h2 class="foot__h">Fotky z akcí</h2>
+          <p><a href="https://www.instagram.com/stonetown_wm/">Instagram</a><br /><a href="https://www.facebook.com/p/Westernov%C3%A9-m%C4%9Bste%C4%8Dko-Stonetown-100056993868302/">Facebook</a></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

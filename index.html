@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Stonetown – tři návrhy nového webu</title>
+    <meta name="description" content="Tři ukázkové návrhy nového webu westernového městečka Stonetown. Nejde o oficiální stránky." />
+    <link rel="stylesheet" href="./fonts/fonts.css" />
+    <link rel="stylesheet" href="./shared/base.css" />
+    <style>
+      :root { --ink: #1b1a17; --mute: #55524b; --line: #d9d6cd; --bg: #f6f5f1; }
+      body { background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.6 'Instrument Sans', system-ui, sans-serif; }
+      .wrap { max-width: 76rem; margin: 0 auto; padding: clamp(2rem, 6vw, 4.5rem) clamp(1rem, 4vw, 2.5rem); display: grid; gap: clamp(2rem, 5vw, 3.5rem); }
+      h1 { font: 700 clamp(2.2rem, 6vw, 4rem)/1 'Bricolage Grotesque', system-ui, sans-serif; letter-spacing: -.035em; max-width: 16ch; }
+      .intro { display: grid; gap: 1rem; }
+      .intro p { max-width: 42rem; color: var(--mute); font-size: 1.125rem; }
+      .grid { display: grid; gap: 1.75rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+      .v { display: grid; gap: .9rem; align-content: start; }
+      .v a.shot { display: block; border: 1px solid var(--line); border-radius: .75rem; overflow: hidden; background: #fff; }
+      .v a.shot img { width: 100%; transition: transform .35s cubic-bezier(.22, 1, .36, 1); }
+      .v a.shot:hover img { transform: scale(1.03); }
+      .v h2 { font: 700 1.6rem/1.1 'Bricolage Grotesque', system-ui, sans-serif; letter-spacing: -.02em; }
+      .v p { color: var(--mute); }
+      .v dl { display: grid; gap: .5rem; padding-top: .9rem; border-top: 1px solid var(--line); font-size: 1rem; }
+      .v dt { font-weight: 600; }
+      .v dd { color: var(--mute); }
+      .open { justify-self: start; display: inline-flex; align-items: center; min-height: 2.9rem; padding: .5rem 1.4rem; border-radius: 99px; background: var(--ink); color: #fff; font-weight: 600; text-decoration: none; }
+      .open:hover { background: #3a3832; }
+      a:focus-visible { outline: 3px solid #0b57a4; outline-offset: 3px; }
+      .same { display: grid; gap: 1rem; padding-top: 2rem; border-top: 1px solid var(--ink); }
+      .same h2 { font: 700 1.6rem/1.1 'Bricolage Grotesque', system-ui, sans-serif; letter-spacing: -.02em; }
+      .same ul { display: grid; gap: .6rem 2.5rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); color: var(--mute); }
+      .same li { padding-left: 1.1rem; position: relative; }
+      .same li::before { content: ''; position: absolute; left: 0; top: .65em; width: .4rem; height: .4rem; border-radius: 50%; background: var(--ink); }
+      footer { color: var(--mute); font-size: .9375rem; }
+    </style>
+  </head>
+  <body>
+    <div class="demo">
+      <span>Ukázkové návrhy, ne oficiální web. Oficiální stránky: <a href="https://www.stonetown.cz/">stonetown.cz</a></span>
+    </div>
+    <main class="wrap">
+      <div class="intro">
+        <h1>Tři návrhy nového webu pro Stonetown</h1>
+        <p>Každý návrh je celá úvodní stránka se stejným obsahem a stejnou poptávkou termínu. Liší se tím, jak působí a komu se chce zalíbit. Proklikejte si všechny tři, ideálně i na mobilu, a řekněte, který je vám nejbližší.</p>
+      </div>
+
+      <div class="grid">
+        <article class="v">
+          <a class="shot" href="./a/" aria-label="Otevřít návrh A: Hlavní ulice"><img src="./img/nahled-a.webp" width="900" height="572" alt="Náhled návrhu A: žlutý vývěsní štít s nápisem Stonetown pod fotkou hlavní ulice" /></a>
+          <h2>A. Hlavní ulice</h2>
+          <p>Každá část stránky je jeden dům z Mainstreet s malovaným štítem. Barvy jsou vzaté ze skutečných fasád.</p>
+          <dl>
+            <div><dt>Působí</dt><dd>Řemeslně a svérázně. Nejvíc „Stonetown“.</dd></div>
+            <div><dt>Sedne</dt><dd>Fanouškům westernu, klubům, rodinám.</dd></div>
+          </dl>
+          <a class="open" href="./a/">Otevřít návrh A</a>
+        </article>
+
+        <article class="v">
+          <a class="shot" href="./b/" aria-label="Otevřít návrh B: Les a ticho"><img src="./img/nahled-b.webp" width="900" height="572" alt="Náhled návrhu B: fotka ulice přes celou obrazovku s velkým bílým nadpisem" /></a>
+          <h2>B. Les a ticho</h2>
+          <p>Hlavní slovo mají fotky a hodně místa kolem. Nahoře hned to nejdůležitější: sezóna, vstupné, cesta.</p>
+          <dl>
+            <div><dt>Působí</dt><dd>Klidně a současně. Nejvíc „výlet do přírody“.</dd></div>
+            <div><dt>Sedne</dt><dd>Učitelům, firmám, filmařům. Potřebuje dobré fotky.</dd></div>
+          </dl>
+          <a class="open" href="./b/">Otevřít návrh B</a>
+        </article>
+
+        <article class="v">
+          <a class="shot" href="./c/" aria-label="Otevřít návrh C: Výprava"><img src="./img/nahled-c.webp" width="900" height="572" alt="Náhled návrhu C: zelená louka, hravý nadpis a fotka jako pohlednice" /></a>
+          <h2>C. Výprava</h2>
+          <p>Stránka je stezka přes louku, která se při čtení vybarvuje. Disciplíny jsou razítka do deníku.</p>
+          <dl>
+            <div><dt>Působí</dt><dd>Hravě a přátelsky. Nejvíc „školní výlet“.</dd></div>
+            <div><dt>Sedne</dt><dd>Dětem, školkám, školám a táborům.</dd></div>
+          </dl>
+          <a class="open" href="./c/">Otevřít návrh C</a>
+        </article>
+      </div>
+
+      <section class="same">
+        <h2>Co mají všechny tři společné</h2>
+        <ul>
+          <li>Programy a volné dny se načítají z jednoho zdroje dat. Později ho nahradí databáze, kterou si Stonetown upraví sám.</li>
+          <li>Poptávka se sama přizpůsobí vybranému programu, hlídá velikost skupiny a počítá odhad ceny.</li>
+          <li>Po odeslání uvidíte e-mail, který by zákazníkovi přišel. V ukázce se nic neodesílá.</li>
+          <li>Texty vycházejí z veřejných zdrojů. Termíny a kapacity jsou vzorové, sezónu 2027 je potřeba potvrdit.</li>
+        </ul>
+      </section>
+
+      <footer>Návrhy vznikly jako podklad k rozhodnutí o novém webu.</footer>
+    </main>
+  </body>
+</html>
