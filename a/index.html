@@ -1,199 +1,326 @@
 <!doctype html>
 <html lang="cs">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>Stonetown – návrh A: Hlavní ulice</title>
-    <meta name="description" content="Ukázkový návrh webu westernového městečka Stonetown u Humpolce. Varianta A: Hlavní ulice." />
-    <meta name="theme-color" content="#3a2a20" />
-    <link rel="preload" href="../fonts/HoltwoodOneSC-400-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="../fonts/fonts.css" />
-    <link rel="stylesheet" href="../shared/base.css" />
-    <link rel="stylesheet" href="./style.css" />
-    <script src="../shared/data.js" defer></script>
-    <script src="../shared/app.js" defer></script>
-  </head>
-  <body>
-    <a class="skip" href="#obsah">Přeskočit na obsah</a>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Stonetown – westernové městečko v lese u Humpolce (návrh A, Western na plátně)</title>
+<meta name="description" content="Ukázkový návrh webu westernového městečka Stonetown u Kamenice u Humpolce. Varianta A: Western na plátně.">
+<link rel="preload" href="../fonts/BigShouldersDisplay-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../shared/base.css">
+<link rel="stylesheet" href="../fonts/a.css">
+<link rel="stylesheet" href="style.css">
+<script>
+(function () {
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.className += ' moving';
+})();
+</script>
+<script src="../shared/data.js" defer></script>
+<script src="../shared/app.js" defer></script>
+<script src="a.js" defer></script>
+</head>
+<body>
+<div class="demo">
+  <span>Ukázkový návrh, ne oficiální web. Údaje nejsou závazné. Oficiální stránky: <a href="https://www.stonetown.cz/">stonetown.cz</a></span>
+  <nav class="demo__nav" aria-label="Varianty návrhu">
+    <a href="../">Přehled</a>
+    <a href="../a/" aria-current="page">A</a>
+    <a href="../b/">B</a>
+    <a href="../c/">C</a>
+  </nav>
+</div>
+<a class="skip" href="#obsah">Přeskočit na obsah</a>
 
-    <div class="demo">
-      <span>Ukázkový návrh, ne oficiální web. Údaje nejsou závazné. Oficiální stránky: <a href="https://www.stonetown.cz/">stonetown.cz</a></span>
-      <nav class="demo__nav" aria-label="Varianty návrhu">
-        <a href="../">Přehled</a>
-        <a href="../a/" aria-current="page">A</a>
-        <a href="../b/">B</a>
-        <a href="../c/">C</a>
-      </nav>
-    </div>
+<svg width="0" height="0" class="defs" aria-hidden="true" focusable="false">
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .9  0 0 0 0 .85  0 0 0 0 .75  0 0 0 .55 0"/></filter>
+  <symbol id="star" viewBox="0 0 40 40"><path d="M20 2l5 12.6 13.5.9-10.4 8.7 3.3 13.1L20 30l-11.4 7.3 3.3-13.1L1.5 15.5 15 14.6z"/></symbol>
+</svg>
 
-    <header class="top">
-      <a class="top__brand" href="#obsah">Stonetown</a>
-      <nav class="top__nav" aria-label="Hlavní navigace">
-        <a href="#serif">Otevřeno a vstupné</a>
-        <a href="#obchod">Co si zkusíte</a>
-        <a href="#skola">Výlety a tábory</a>
-        <a href="#radnice">Program</a>
-        <a href="#cesta">Cesta</a>
-      </nav>
-      <a class="btn btn--small" href="#poptavka">Poptat termín</a>
-    </header>
+<header class="top" id="top">
+  <div class="top__in">
+    <a class="logo" href="#obsah" aria-label="Stonetown, na začátek">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><use href="#star"/></svg>
+      <span>Stonetown</span>
+    </a>
+    <nav class="nav" aria-label="Hlavní">
+      <ul class="nav__links">
+        <li><a href="#sezona">Vstupné</a></li>
+        <li><a href="#aktivity">Co zkusíte</a></li>
+        <li><a href="#pribeh">Příběh</a></li>
+        <li><a href="#programy">Programy</a></li>
+        <li><a href="#program">Program roku</a></li>
+        <li><a href="#cesta">Cesta</a></li>
+      </ul>
+      <details class="nav__menu">
+        <summary>Menu</summary>
+        <ul>
+          <li><a href="#sezona">Vstupné</a></li>
+          <li><a href="#aktivity">Co zkusíte</a></li>
+          <li><a href="#pribeh">Příběh</a></li>
+          <li><a href="#programy">Programy</a></li>
+          <li><a href="#program">Program roku</a></li>
+          <li><a href="#cesta">Cesta</a></li>
+        </ul>
+      </details>
+    </nav>
+    <a class="btn btn--amber top__cta" href="#poptavka">Poptat termín</a>
+  </div>
+</header>
 
-    <main id="obsah">
-      <section class="hero">
-        <picture class="hero__photo">
-          <source media="(max-width: 700px)" srcset="../img/ulice-800.webp" />
-          <img src="../img/ulice-1600.webp" width="1600" height="1200" alt="Hlavní ulice Stonetownu: dřevěné domy s verandami, banka, obchod s plechovým zbožím a na konci ulice bílý kostel" fetchpriority="high" />
-        </picture>
-        <div class="hero__board">
-          <div class="sign sign--hero">
-            <h1 class="sign__name">Stonetown</h1>
-            <p class="sign__line">Westernové městečko v lesích u Humpolce</p>
-          </div>
-          <p class="hero__lead">
-            Na hlavní ulici stojí banka, úřad šerifa, kavárna, kasino, obchod a kostel se zvonem. Postavila je parta
-            kamarádů vlastníma rukama a žádný z těch domů není kulisa.
-          </p>
-          <div class="hero__cta">
-            <a class="btn" href="#poptavka">Poptat školní výlet</a>
-            <a class="btn btn--line" href="#obchod">Co si u nás zkusíte</a>
-          </div>
+<main id="obsah">
+
+<!-- 1 · Hero: the opening shot -->
+<section class="hero" aria-labelledby="hero-t">
+  <p class="hero__presents"><span>Westernové městečko Stonetown uvádí</span></p>
+  <div class="frame" data-frame>
+    <img class="frame__img" src="../img/a-ulice-1600.webp" srcset="../img/a-ulice-800.webp 800w, ../img/a-ulice-1600.webp 1600w" sizes="(max-width: 60rem) 100vw, 90vw" width="1600" height="670" alt="Hlavní ulice Stonetownu: vlevo obchod Tinware Johna Nelsona, vpravo dřevěné domy s verandami, na konci ulice bílý kostelík pod dramatickým nebem." fetchpriority="high">
+    <i class="frame__bar frame__bar--t" aria-hidden="true"></i>
+    <i class="frame__bar frame__bar--b" aria-hidden="true"></i>
+    <svg class="frame__grain" aria-hidden="true"><rect width="100%" height="100%" filter="url(#grain)"/></svg>
+    <p class="frame__tc" aria-hidden="true"><span class="rec"></span> Mainstreet · Kamenice u Humpolce</p>
+  </div>
+  <div class="hero__title">
+    <h1 id="hero-t"><span class="hero__name">Stonetown</span></h1>
+    <p class="hero__tag">Westernové městečko v lese na Vysočině · od roku 1996</p>
+  </div>
+  <div class="hero__body">
+    <p class="hero__lede">Opravdové městečko Divokého západu u Kamenice u Humpolce. Banka, úřad šerifa, kavárna, kasino, obchod i kostel se zvonem. Žádný dům tu není jen kulisa.</p>
+    <p class="hero__cta">
+      <a class="btn btn--amber btn--big" href="#poptavka">Poptat školní výlet</a>
+      <a class="btn btn--line btn--big" href="#aktivity">Co si u nás zkusíte</a>
+    </p>
+    <p class="pill"><span class="pill__dot" aria-hidden="true"></span> 2026: pro veřejnost zavřeno · školy a skupiny poptávají už teď</p>
+  </div>
+</section>
+
+<!-- 2 · Season & admission -->
+<section class="scene scene--season" id="sezona" aria-labelledby="sezona-t">
+  <div class="wrap">
+    <p class="slate"><b>Scéna 01</b><span>Sezóna a vstupné</span></p>
+    <div class="season">
+      <div class="season__state">
+        <p class="stamp" aria-hidden="true">Zavřeno<br><small>sezóna 2026</small></p>
+        <h2 id="sezona-t" class="h2">Letos má městečko přestávku</h2>
+        <p class="big-p">V roce 2026 je městečko pro veřejnost dočasně zavřené. Sezónu 2027 doplníme, jakmile bude vyhlášená.</p>
+        <p>Školy, tábory a skupiny si o termín mohou napsat už teď.</p>
+        <a class="btn btn--amber" href="#poptavka">Poptat termín</a>
+      </div>
+      <div class="ticket" role="group" aria-label="Vstupné">
+        <div class="ticket__main">
+          <p class="ticket__k">Vstupenka · Admit one</p>
+          <p class="ticket__price"><span>100</span> Kč</p>
+          <p class="ticket__per">za osobu</p>
+          <ul class="ticket__list">
+            <li><span>Děti do 120 cm</span><b>zdarma</b></li>
+            <li><span>Parkování</span><b>zdarma</b></li>
+            <li><span>Počítejte s časem</span><b>asi 2,5 hodiny</b></li>
+          </ul>
+          <p class="ticket__note">Vstupné platí i pro hosty, kteří jdou jen do kavárny.</p>
         </div>
-      </section>
-
-      <!-- SHERIFF -->
-      <section class="house house--timber" id="serif">
-        <div class="front" aria-hidden="true"><span class="sign">Sheriff</span></div>
-        <div class="porch">
-          <h2 class="h2">Otevřeno a vstupné</h2>
-          <div class="notice-grid">
-            <div class="notice">
-              <p class="notice__head">Vyhláška</p>
-              <p class="notice__big">V roce 2026 je městečko pro veřejnost dočasně zavřené.</p>
-              <p>Sezónu 2027 sem doplníme, jakmile bude jasná. Školy, oddíly a skupiny se na termín mohou ptát už teď.</p>
-              <a class="link" href="#poptavka">Zeptat se na termín</a>
-            </div>
-            <dl class="tariff">
-              <div><dt>Vstupné</dt><dd>100 Kč</dd><dd class="tariff__n">za osobu</dd></div>
-              <div><dt>Děti do 120 cm</dt><dd>zdarma</dd></div>
-              <div><dt>Parkování</dt><dd>zdarma</dd></div>
-              <div><dt>Na návštěvu si nechte</dt><dd>2,5 hodiny</dd></div>
-            </dl>
-          </div>
-          <p class="small">Vstupné platí i ten, kdo jde jen do kavárny. Když je městečko zamluvené pro soukromou akci, najdete to v programu.</p>
-        </div>
-      </section>
-
-      <!-- GENERAL STORE -->
-      <section class="house house--yellow" id="obchod">
-        <div class="front" aria-hidden="true"><span class="sign">General Store</span></div>
-        <div class="porch">
-          <h2 class="h2">Co si u nás zkusíte</h2>
-          <p class="lead">Nejde o podívanou zpoza plotu. Laso, tomahawk i rýžovací pánev dostanete do ruky a vždycky je poblíž někdo, kdo poradí nebo to předvede.</p>
-          <div class="store">
-            <ul class="goods">
-              <li><h3>Luk</h3><p>Střelba na terč, pro děti i dospělé.</p></li>
-              <li><h3>Tomahawk a nože</h3><p>Hod na dřevěný terč. Jde to líp, než čekáte.</p></li>
-              <li><h3>Laso a bič</h3><p>Ukážeme, jak laso roztočit a kam s ním mířit.</p></li>
-              <li><h3>Podkova</h3><p>Hod podkovou na kolík. Nejtěžší z lehkých disciplín.</p></li>
-              <li><h3>Rýžování zlata</h3><p>Pánev, voda a trpělivost, jako v Kalifornii.</p></li>
-              <li><h3>Střelnice</h3><p>Střelba na plechovky z dobových zbraní.</p></li>
-              <li><h3>Dílny</h3><p>Kožený váček, přívěsek, provaz nebo ruční papír na památku.</p></li>
-              <li><h3>Muzeum</h3><p>Jak se osidloval Divoký západ a co si osadníci vezli s sebou.</p></li>
-            </ul>
-            <figure class="store__photo">
-              <picture>
-                <source media="(max-width: 700px)" srcset="../img/leto-700.webp" />
-                <img src="../img/leto-1400.webp" width="1400" height="939" alt="Letní pohled do ulice Stonetownu s dřevěnými domy a verandami" loading="lazy" />
-              </picture>
-              <figcaption>V kavárně na verandě dostanete kávu a domácí jablečný závin.</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <!-- SCHOOL -->
-      <section class="house house--green" id="skola">
-        <div class="front" aria-hidden="true"><span class="sign">School House</span></div>
-        <div class="porch">
-          <h2 class="h2">Výlety, tábory a akce pro skupiny</h2>
-          <p class="lead">Vyberte program a rovnou uvidíte dny, kdy je místo. Rezervace je potřeba vždy, jídlo zařídíme po domluvě.</p>
-          <div class="progs" data-programs></div>
-          <p class="small">Termíny a kapacity jsou v téhle ukázce vzorové. Ceny školních programů vycházejí z dřívějších sezón.</p>
-        </div>
-      </section>
-
-      <!-- TELEGRAPH -->
-      <section class="house house--rust" id="poptavka">
-        <div class="front" aria-hidden="true"><span class="sign">Telegraph Office</span></div>
-        <div class="porch">
-          <h2 class="h2">Poptávka termínu</h2>
-          <p class="lead">Formulář se přizpůsobí programu, který vyberete. Hlídá velikost skupiny a rovnou počítá odhad ceny.</p>
-          <div data-inquiry></div>
-        </div>
-      </section>
-
-      <!-- TOWN HALL -->
-      <section class="house house--timber" id="radnice">
-        <div class="front" aria-hidden="true"><span class="sign">Town Hall</span></div>
-        <div class="porch">
-          <h2 class="h2">Program 2026</h2>
-          <p class="lead">Takhle vypadal poslední vyhlášený rok. Termíny na rok 2027 doplníme.</p>
-          <ol class="evs" data-events></ol>
-        </div>
-      </section>
-
-      <section class="story">
-        <picture>
-          <source media="(max-width: 700px)" srcset="../img/zima-900.webp" />
-          <img src="../img/zima-1800.webp" width="1800" height="808" alt="Zasněžená hlavní ulice Stonetownu s obchodem General Store" loading="lazy" />
-        </picture>
-        <blockquote class="story__q">
-          <p>„Poblíž je vesnička Kamenice, a tak se to u nás mělo jmenovat Stonevillage, ale my jsme chtěli být město.“</p>
-          <footer>Petr Řádek, starosta Stonetownu, pro Český rozhlas, 2021</footer>
-        </blockquote>
-      </section>
-
-      <!-- DEPOT -->
-      <section class="house house--yellow" id="cesta">
-        <div class="front" aria-hidden="true"><span class="sign">Livery &amp; Depot</span></div>
-        <div class="porch">
-          <h2 class="h2">Jak se k nám dostanete</h2>
-          <div class="ways">
-            <div>
-              <h3>Autem</h3>
-              <p>Z dálnice D1 sjeďte na exitu 90 u Humpolce. Dál vás na parkoviště dovedou cedule Stonetown.</p>
-            </div>
-            <div>
-              <h3>Vlakem</h3>
-              <p>Vystupte na zastávce Kamenice u Humpolce na trati Havlíčkův Brod – Humpolec. Od zastávky jděte po modré turistické značce.</p>
-            </div>
-            <div>
-              <h3>Adresa</h3>
-              <p>Kamenice 103<br />582 55 Herálec</p>
-              <a class="link" href="https://www.google.com/maps/search/?api=1&query=49.52155%2C15.41825">Otevřít v mapě</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="foot">
-      <div class="foot__in">
-        <div>
-          <p class="foot__name">Stonetown</p>
-          <p>Westernové městečko Stonetown, z.s.<br />Kamenice 103, 582 55 Herálec</p>
-        </div>
-        <div>
-          <h2 class="foot__h">Napište nebo zavolejte</h2>
-          <p><a href="mailto:info@stonetown.cz">info@stonetown.cz</a><br /><a href="tel:+420776706191">+420 776 706 191</a></p>
-          <p>Tábory: <a href="mailto:tabor@stonetown.cz">tabor@stonetown.cz</a></p>
-        </div>
-        <div>
-          <h2 class="foot__h">Fotky z akcí</h2>
-          <p><a href="https://www.instagram.com/stonetown_wm/">Instagram</a><br /><a href="https://www.facebook.com/p/Westernov%C3%A9-m%C4%9Bste%C4%8Dko-Stonetown-100056993868302/">Facebook</a></p>
+        <div class="ticket__stub" aria-hidden="true">
+          <span>Stonetown</span>
+          <span class="ticket__no">Nº 1996</span>
         </div>
       </div>
-    </footer>
-  </body>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · Activities as a storyboard -->
+<section class="scene scene--acts" id="aktivity" aria-labelledby="aktivity-t">
+  <div class="wrap">
+    <p class="slate"><b>Scéna 02</b><span>Co si u nás zkusíte</span></p>
+    <div class="head">
+      <h2 id="aktivity-t" class="h2">Osm disciplín<br>Divokého západu</h2>
+      <p class="big-p">U každé je někdo, kdo poradí nebo předvede, jak na to. Mezi tím na verandě kavárny voní káva a domácí jablečný štrúdl.</p>
+    </div>
+    <ol class="board">
+      <li class="panel">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M15 5c15 7 15 31 0 38"/><path d="M15 5v38"/><path d="M6 24h36"/><path d="M36 19l6 5-6 5"/><path d="M6 21l3 3-3 3"/></svg>
+        <h3>Luk</h3><p>Střelba z luku na terč.</p>
+      </li>
+      <li class="panel">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 43L33 11"/><path d="M27 9c7-2 14 2 15 9l-9 3-7-8z"/><path d="M8 18l8 14M12 14l-2 22"/></svg>
+        <h3>Tomahawk a nože</h3><p>Hod tomahawkem a nožem do špalku.</p>
+      </li>
+      <li class="panel">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="25" cy="16" rx="15" ry="8"/><path d="M14 22c-3 6 1 10 6 12s5 7 0 9"/><path d="M30 24c4 4 10 6 14 4"/></svg>
+        <h3>Laso a bič</h3><p>Házení lasem a práskání bičem.</p>
+      </li>
+      <li class="panel">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M13 42V22a11 11 0 0 1 22 0v20"/><path d="M8 42h10M30 42h10"/><circle cx="15" cy="30" r="1.2"/><circle cx="33" cy="30" r="1.2"/><circle cx="16" cy="20" r="1.2"/><circle cx="32" cy="20" r="1.2"/></svg>
+        <h3>Podkova</h3><p>Hod podkovou na cíl.</p>
+      </li>
+      <li class="panel">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="31" rx="19" ry="8"/><ellipse cx="24" cy="30" rx="11" ry="4"/><path d="M22 8l1.5 4 4 1.5-4 1.5L22 19l-1.5-4-4-1.5 4-1.5zM34 15l1 2.5 2.5 1-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1z"/></svg>
+        <h3>Rýžování zlata</h3><p>Rýžovací pánev, voda a trpělivost.</p>
+      </li>
+      <li class="panel">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 42h36"/><rect x="9" y="28" width="8" height="14"/><rect x="20" y="24" width="8" height="18"/><rect x="31" y="30" width="8" height="12"/><circle cx="24" cy="12" r="7"/><path d="M24 2v6M24 16v6M14 12h6M28 12h6"/></svg>
+        <h3>Střelnice</h3><p>Dobové zbraně a střelba na plechovky.</p>
+      </li>
+      <li class="panel">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 12h14l-2 7c7 4 10 11 7 17-3 6-21 6-24 0s0-13 7-17z"/><path d="M14 19c6 2 14 2 20 0"/><path d="M20 12c0-4 8-4 8 0"/></svg>
+        <h3>Tvořivé dílny</h3><p>Kožený váček, přívěsek, provaz, ruční papír nebo dřevořezba.</p>
+      </li>
+      <li class="panel">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 32h36"/><path d="M9 32c0-17 30-17 30 0"/><path d="M17 17v15M24 15v17M31 17v15"/><circle cx="13" cy="38" r="5"/><circle cx="35" cy="38" r="5"/></svg>
+        <h3>Muzeum</h3><p>Muzeum osidlování Divokého západu.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- 4 · Story as a filmstrip with subtitles -->
+<section class="scene scene--story" id="pribeh" aria-labelledby="pribeh-t">
+  <div class="wrap">
+    <p class="slate"><b>Scéna 03</b><span>Příběh městečka</span></p>
+    <div class="story">
+      <div class="story__text">
+        <h2 id="pribeh-t" class="h2">Z letních táborů vyrostlo město</h2>
+        <p class="big-p">Stonetown začal jako parta kamarádů, která pořádala letní tábory v lese u Humpolce. Postupně přibývaly stavby, až z nich bylo celé městečko. Funguje od roku 1996 a pořád roste.</p>
+        <p>Na Mainstreet dnes stojí banka, úřad šerifa, kavárna, kasino, obchod a kostel se zvonem. Je tu i kožedělná dílna a truhlářský koutek. Městečko slouží jako kulisa pro LARP i pro filmaře: westerny, historické filmy, reklamy a hudební klipy.</p>
+        <p class="src">Podle reportáže Českého rozhlasu z 25. 9. 2021.</p>
+      </div>
+      <p class="story__year" aria-hidden="true">1996<small>městečko v provozu od roku</small></p>
+    </div>
+  </div>
+  <div class="strip" aria-label="Záběry z městečka">
+    <figure class="strip__f">
+      <img src="../img/a-rano-800.webp" srcset="../img/a-rano-800.webp 800w, ../img/a-rano-1600.webp 1600w" sizes="(max-width: 50rem) 88vw, 46vw" width="1600" height="670" alt="Mainstreet v nízkém ranním světle, dlouhé stíny verand." loading="lazy">
+      <figcaption><span>„Poblíž je vesnička Kamenice, a tak se to u nás mělo jmenovat Stonevillage, ale my jsme chtěli být město.“</span></figcaption>
+    </figure>
+    <figure class="strip__f">
+      <img src="../img/a-leto-700.webp" srcset="../img/a-leto-700.webp 700w, ../img/a-leto-1400.webp 1400w" sizes="(max-width: 50rem) 88vw, 46vw" width="1400" height="586" alt="Městečko v létě: dvoupatrové dřevěné domy s balkony a prašná ulice." loading="lazy">
+      <figcaption><span>„Není tu jediný barák, který by byl jenom kulisou. Jsou to všechno plnohodnotné funkční objekty.“</span></figcaption>
+    </figure>
+    <figure class="strip__f">
+      <img src="../img/a-zima-800.webp" srcset="../img/a-zima-800.webp 800w, ../img/a-zima-1600.webp 1600w" sizes="(max-width: 50rem) 88vw, 46vw" width="1600" height="669" alt="Mainstreet pod sněhem, vlevo budova General Store." loading="lazy">
+      <figcaption><span>Petr Řádek, starosta Stonetownu · Český rozhlas, 2021</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 5 · Programmes + inquiry -->
+<section class="scene scene--progs" id="programy" aria-labelledby="programy-t">
+  <div class="wrap">
+    <p class="slate"><b>Scéna 04</b><span>Pro školy, tábory a skupiny</span></p>
+    <div class="head">
+      <h2 id="programy-t" class="h2">Vyberte program,<br>zbytek domluvíme</h2>
+      <p class="big-p">Školní výlet trvá asi 3 hodiny a stojí zhruba 150–250 Kč na dítě podle velikosti skupiny. Doprovod neplatí, děti dostanou pracovní listy, stravování po domluvě. Rezervace je nutná.</p>
+    </div>
+    <div class="progs" data-programs>
+      <noscript><p>Nabídka programů se načítá skriptem. Napište nám na info@stonetown.cz nebo zavolejte na +420 776 706 191.</p></noscript>
+    </div>
+    <p class="sample">Termíny a kapacity v této ukázce jsou vzorová data.</p>
+    <div class="extras">
+      <article class="extra">
+        <h3>Letní tábor</h3>
+        <p>V roce 2026 třicátý ročník: „Čarodějův učeň“, 5.–18. 7. 2026, pro děti od 7 do 15 let. V zimě se tu táboří a soutěží Lovci kožešin.</p>
+        <a href="mailto:tabor@stonetown.cz">tabor@stonetown.cz</a>
+      </article>
+      <article class="extra">
+        <h3>LARP a natáčení</h3>
+        <p>Celé městečko jako kulisa pro LARP i pro filmaře: westerny, historické filmy, reklamy a hudební klipy.</p>
+        <a href="mailto:info@stonetown.cz">info@stonetown.cz</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="scene scene--form" id="poptavka" aria-labelledby="poptavka-t">
+  <div class="wrap">
+    <div class="script">
+      <p class="slate slate--ink"><b>Scéna 05</b><span>Poptávka termínu</span></p>
+      <h2 id="poptavka-t" class="h2">Napište nám, kdy a s kým přijedete</h2>
+      <p class="script__lede">Odpovíme e-mailem a termín potvrdíme. Poptávka je nezávazná.</p>
+      <div data-inquiry>
+        <noscript><p>Formulář potřebuje JavaScript. Napište nám prosím na info@stonetown.cz nebo zavolejte na +420 776 706 191.</p></noscript>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · Programme of the year: the marquee -->
+<section class="scene scene--events" id="program" aria-labelledby="program-t">
+  <div class="wrap">
+    <p class="slate"><b>Scéna 06</b><span>Program roku</span></p>
+    <div class="marquee">
+     <div class="marquee__board">
+      <div class="marquee__top">
+        <p class="marquee__k">Na programu</p>
+        <h2 id="program-t" class="marquee__t">Rok 2026</h2>
+      </div>
+      <ol class="evs" data-events>
+        <noscript><li>Program roku se načítá skriptem. Najdete ho také na stonetown.cz.</li></noscript>
+      </ol>
+      <p class="marquee__foot">Sezónu 2027 doplníme, jakmile bude vyhlášená.</p>
+     </div>
+    </div>
+    <figure class="still">
+      <img src="../img/a-bic-700.webp" srcset="../img/a-bic-700.webp 700w, ../img/a-bic-1360.webp 1360w" sizes="(max-width: 60rem) 100vw, 60rem" width="1360" height="569" alt="Vystoupení s bičem na louce, diváci sedí na lavicích před srubem." loading="lazy">
+      <figcaption>Vystoupení s bičem na louce</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 7 · Getting there -->
+<section class="scene scene--way" id="cesta" aria-labelledby="cesta-t">
+  <div class="wrap">
+    <p class="slate"><b>Scéna 07</b><span>Cesta</span></p>
+    <div class="way">
+      <div>
+        <h2 id="cesta-t" class="h2">Jak se k nám dostanete</h2>
+        <dl class="way__list">
+          <div><dt>Autem</dt><dd>Po D1 na exit 90 u Humpolce, dál podle cedulí na parkoviště. Parkování je zdarma.</dd></div>
+          <div><dt>Vlakem</dt><dd>Zastávka Kamenice u Humpolce na trati Havlíčkův Brod – Humpolec, odtud po modré turistické značce.</dd></div>
+          <div><dt>Adresa</dt><dd>Kamenice 103, 582 55 Herálec<br><a href="https://www.google.com/maps/search/?api=1&amp;query=49.52155%2C15.41825">Otevřít mapu</a></dd></div>
+        </dl>
+      </div>
+      <svg class="map" viewBox="0 0 520 380" role="img" aria-label="Schéma cesty: dálnice D1, exit 90 u Humpolce, odtud silnicí ke Stonetownu u Kamenice; vlakem do zastávky Kamenice u Humpolce a po modré značce.">
+        <defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><path d="M0 0v8" stroke="#3a2e22" stroke-width="2"/></pattern></defs>
+        <rect width="520" height="380" rx="6" fill="#1a1510"/>
+        <path d="M330 300c50-30 110-20 190 10v70H300c0-30 10-60 30-80z" fill="url(#hatch)" opacity=".8"/>
+        <path d="M0 330L520 60" fill="none" stroke="#e3a24a" stroke-width="11" stroke-linecap="round"/>
+        <path d="M0 330L520 60" fill="none" stroke="#1a1510" stroke-width="2" stroke-dasharray="14 10"/>
+        <path d="M30 110C150 130 230 250 310 312" fill="none" stroke="#9a8b72" stroke-width="3"/>
+        <path d="M30 110C150 130 230 250 310 312" fill="none" stroke="#1a1510" stroke-width="1.5" stroke-dasharray="6 6"/>
+        <path d="M240 205C280 240 320 262 356 280" fill="none" stroke="#efe3c8" stroke-width="4" stroke-linecap="round"/>
+        <path d="M312 312C330 304 344 296 356 288" fill="none" stroke="#6fa4e0" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/>
+        <circle cx="240" cy="205" r="9" fill="#efe3c8" stroke="#1a1510" stroke-width="3"/>
+        <rect x="303" y="305" width="14" height="14" fill="#9a8b72" stroke="#1a1510" stroke-width="2"/>
+        <path d="M360 290c-9-12-16-20-16-28a16 16 0 0 1 32 0c0 8-7 16-16 28z" fill="#c2552f" stroke="#1a1510" stroke-width="2"/>
+        <circle cx="360" cy="262" r="5.5" fill="#1a1510"/>
+        <text x="60" y="306" class="map__l map__l--d">D1</text>
+        <text x="284" y="226" class="map__l">exit 90 · Humpolec</text>
+        <text x="30" y="98" class="map__l map__l--s">trať H. Brod – Humpolec</text>
+        <text x="300" y="342" class="map__l map__l--s" text-anchor="end">zast. Kamenice u Humpolce</text>
+        <text x="384" y="270" class="map__l map__l--b">Stonetown</text>
+        <text x="470" y="364" class="map__l map__l--s">Vysočina</text>
+        <text x="500" y="36" class="map__l map__l--s" text-anchor="end">Praha ↑</text>
+        <text x="20" y="364" class="map__l map__l--s">schéma, ne v měřítku</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 8 · End credits -->
+<footer class="credits" aria-labelledby="credits-t">
+  <div class="wrap credits__in">
+    <h2 id="credits-t" class="credits__t">Kontakt</h2>
+    <dl class="credits__list">
+      <div><dt>Provozovatel</dt><dd>Westernové městečko Stonetown, z.s.</dd></div>
+      <div><dt>Adresa</dt><dd>Kamenice 103, 582 55 Herálec</dd></div>
+      <div><dt>E-mail</dt><dd><a href="mailto:info@stonetown.cz">info@stonetown.cz</a></dd></div>
+      <div><dt>Tábory</dt><dd><a href="mailto:tabor@stonetown.cz">tabor@stonetown.cz</a></dd></div>
+      <div><dt>Telefon</dt><dd><a href="tel:+420776706191">+420 776 706 191</a></dd></div>
+      <div><dt>Sledujte</dt><dd><a href="https://www.instagram.com/stonetown_wm/">Instagram</a> · <a href="https://www.facebook.com/p/Westernov%C3%A9-m%C4%9Bste%C4%8Dko-Stonetown-100056993868302/">Facebook</a></dd></div>
+    </dl>
+    <p class="credits__end" aria-hidden="true">Konec</p>
+    <p class="credits__small">V lese u Kamenice u Humpolce od roku 1996. <a href="#top">Zpět nahoru</a></p>
+  </div>
+</footer>
+</body>
 </html>

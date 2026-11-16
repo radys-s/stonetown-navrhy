@@ -4,19 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Stonetown – návrh B: Les a ticho</title>
-    <meta name="description" content="Ukázkový návrh webu westernového městečka Stonetown u Humpolce. Varianta B: Les a ticho." />
-    <meta name="theme-color" content="#17332a" />
-    <link rel="preload" href="../fonts/BricolageGrotesque-300-800-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="../fonts/fonts.css" />
+    <title>Stonetown – návrh B: Vyhláška</title>
+    <meta name="description" content="Ukázkový návrh webu westernového městečka Stonetown u Humpolce. Varianta B: Vyhláška." />
+    <meta name="theme-color" content="#2b1b11" />
+    <link rel="preload" href="../fonts/Rye-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../fonts/b.css" />
     <link rel="stylesheet" href="../shared/base.css" />
     <link rel="stylesheet" href="./style.css" />
     <script src="../shared/data.js" defer></script>
     <script src="../shared/app.js" defer></script>
+    <script src="./b.js" defer></script>
   </head>
   <body>
-    <a class="skip" href="#obsah">Přeskočit na obsah</a>
-
     <div class="demo">
       <span>Ukázkový návrh, ne oficiální web. Údaje nejsou závazné. Oficiální stránky: <a href="https://www.stonetown.cz/">stonetown.cz</a></span>
       <nav class="demo__nav" aria-label="Varianty návrhu">
@@ -27,121 +26,360 @@
       </nav>
     </div>
 
-    <header class="top">
-      <a class="top__brand" href="#obsah">Stonetown</a>
-      <nav class="top__nav" aria-label="Hlavní navigace">
-        <a href="#zkusit">Co si zkusíte</a>
+    <a class="skip" href="#obsah">Přeskočit na obsah</a>
+
+    <!-- shared SVG defs: paper grain, rough edges -->
+    <svg class="defs" aria-hidden="true" focusable="false" width="0" height="0">
+      <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".04" numOctaves="3" seed="3" /><feDisplacementMap in="SourceGraphic" scale="6" /></filter>
+      <filter id="ink"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="8" result="n" /><feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -.9 1.45" result="m" /><feComposite in="SourceGraphic" in2="m" operator="in" /></filter>
+      <pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="5" stroke="#2a1d14" stroke-width="1.6" /></pattern>
+      <pattern id="hatch-l" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)"><line x1="0" y1="0" x2="0" y2="7" stroke="#2a1d14" stroke-width="1" /></pattern>
+    </svg>
+
+    <header class="bar">
+      <a class="bar__brand" href="#obsah">Stonetown</a>
+      <nav class="bar__nav" aria-label="Hlavní navigace">
+        <a href="#vyhlaska">Vstupné</a>
+        <a href="#hleda-se">Co si zkusíte</a>
+        <a href="#kronika">Příběh</a>
         <a href="#programy">Výlety a tábory</a>
-        <a href="#program">Program</a>
-        <a href="#cesta">Cesta a vstupné</a>
+        <a href="#program">Program roku</a>
+        <a href="#cesta">Cesta</a>
       </nav>
-      <a class="btn btn--light" href="#poptavka">Poptat termín</a>
+      <a class="bar__cta" href="#poptavka">Poptat termín</a>
     </header>
 
     <main id="obsah">
-      <section class="hero">
-        <picture class="hero__photo">
-          <source media="(max-width: 700px)" srcset="../img/ulice-800.webp" />
-          <img src="../img/ulice-1600.webp" width="1600" height="1200" alt="Hlavní ulice Stonetownu: dřevěné domy s verandami, banka, obchod s plechovým zbožím a na konci ulice bílý kostel" fetchpriority="high" />
-        </picture>
-        <div class="hero__in">
-          <h1 class="hero__h">Divoký západ v&nbsp;lesích u&nbsp;Humpolce</h1>
-          <p class="hero__lead">Luk, laso, tomahawk a rýžovací pánev. Ve Stonetownu si všechno zkusíte sami.</p>
-          <div class="hero__cta">
-            <a class="btn btn--light" href="#poptavka">Poptat školní výlet</a>
-            <a class="btn btn--ghost" href="#zkusit">Co si u nás zkusíte</a>
+      <!-- ============ HERO: the broadside ============ -->
+      <section class="wall wall--hero" aria-labelledby="hero-title">
+        <article class="sheet broadside">
+          <span class="nail nail--tl" aria-hidden="true"></span><span class="nail nail--tr" aria-hidden="true"></span>
+          <span class="nail nail--bl" aria-hidden="true"></span><span class="nail nail--br" aria-hidden="true"></span>
+
+          <p class="bs__top"><span aria-hidden="true">☞</span> Vyhlašuje se všem rodinám, školám a oddílům <span aria-hidden="true">☜</span></p>
+          <p class="bs__kicker">Westernové městečko</p>
+          <h1 class="bs__name" id="hero-title">Stonetown</h1>
+          <div class="bs__rule" aria-hidden="true"><span>★</span><span>★</span><span>★</span></div>
+          <p class="bs__where">v lesích u Humpolce</p>
+
+          <svg class="bs__town" viewBox="0 0 1200 260" role="img" aria-labelledby="town-t">
+            <title id="town-t">Rytina hlavní ulice Stonetownu: dřevěné domy se štíty, banka, obchod a kostel se zvonicí, za nimi smrkový les</title>
+            <g class="far" fill="#2a1d14" opacity=".28">
+              <path d="M0 150 L30 95 L45 120 L70 70 L95 118 L115 88 L140 130 L170 60 L200 125 L230 85 L255 120 L285 66 L320 128 L350 92 L380 124 L410 72 L445 130 L470 98 L500 126 L540 64 L575 128 L600 96 L630 122 L665 70 L700 130 L730 90 L760 124 L800 60 L835 128 L865 94 L895 120 L930 72 L965 130 L990 96 L1020 126 L1060 66 L1095 128 L1125 92 L1160 124 L1200 80 L1200 260 L0 260 Z" />
+            </g>
+            <g class="mid" fill="url(#hatch-l)" stroke="#2a1d14" stroke-width="1.5">
+              <path d="M0 178 L22 120 L40 150 L58 104 L80 158 L100 128 L120 168 L150 112 L175 166 L210 134 L1000 134 L1030 108 L1052 160 L1080 118 L1110 166 L1140 120 L1165 160 L1200 112 L1200 260 L0 260 Z" />
+            </g>
+            <!-- buildings -->
+            <g stroke="#2a1d14" stroke-width="2.4" stroke-linejoin="round">
+              <!-- tinware -->
+              <path d="M150 260 V150 H168 V138 H262 V150 H280 V260 Z" fill="#efe3c6" />
+              <rect x="174" y="152" width="82" height="22" fill="#2a1d14" />
+              <text x="215" y="168" fill="#efe3c6" font-family="Big Shoulders Display, sans-serif" font-size="15" font-weight="800" text-anchor="middle" stroke="none" letter-spacing="2">TINWARE</text>
+              <path d="M140 200 H290 L282 212 H148 Z" fill="url(#hatch)" />
+              <path d="M160 212 V260 M270 212 V260" />
+              <rect x="190" y="222" width="22" height="38" fill="url(#hatch)" /><rect x="222" y="222" width="30" height="20" fill="#efe3c6" />
+              <!-- bank with balcony -->
+              <path d="M300 260 V112 L318 112 L318 98 Q372 76 426 98 L426 112 L444 112 V260 Z" fill="#efe3c6" />
+              <rect x="336" y="116" width="72" height="20" fill="#2a1d14" />
+              <text x="372" y="131" fill="#efe3c6" font-family="Big Shoulders Display, sans-serif" font-size="15" font-weight="800" text-anchor="middle" stroke="none" letter-spacing="3">BANK</text>
+              <path d="M300 182 H444 M300 182 V196 H444 V182 M310 182 V196 M326 182 V196 M342 182 V196 M358 182 V196 M374 182 V196 M390 182 V196 M406 182 V196 M422 182 V196 M438 182 V196" fill="none" />
+              <rect x="320" y="146" width="18" height="26" fill="url(#hatch)" /><rect x="363" y="146" width="18" height="26" fill="url(#hatch)" /><rect x="406" y="146" width="18" height="26" fill="url(#hatch)" />
+              <rect x="356" y="212" width="32" height="48" fill="url(#hatch)" />
+              <!-- church -->
+              <path d="M560 260 V170 L600 136 L640 170 V260 Z" fill="#efe3c6" />
+              <path d="M584 136 V96 H616 V136" fill="#efe3c6" />
+              <path d="M580 96 L600 58 L620 96 Z" fill="url(#hatch)" />
+              <path d="M600 58 V40 M592 47 H608" fill="none" />
+              <path d="M594 104 h12 v14 h-12 z" fill="#2a1d14" />
+              <path d="M588 190 Q600 176 612 190 V214 H588 Z" fill="url(#hatch)" />
+              <rect x="590" y="226" width="20" height="34" fill="#2a1d14" />
+              <!-- sheriff -->
+              <path d="M680 260 V128 H700 V118 H800 V128 H820 V260 Z" fill="#efe3c6" />
+              <rect x="706" y="134" width="88" height="22" fill="#efe3c6" />
+              <text x="750" y="150" fill="#2a1d14" font-family="Big Shoulders Display, sans-serif" font-size="15" font-weight="800" text-anchor="middle" stroke="none" letter-spacing="2">SHERIFF</text>
+              <path d="M672 196 H828 L820 208 H680 Z" fill="url(#hatch)" />
+              <path d="M690 208 V260 M750 208 V260 M810 208 V260" />
+              <rect x="706" y="166" width="18" height="22" fill="url(#hatch)" /><rect x="776" y="166" width="18" height="22" fill="url(#hatch)" />
+              <rect x="760" y="222" width="24" height="38" fill="#2a1d14" />
+              <!-- general store -->
+              <path d="M840 260 V140 L858 140 L858 126 L1006 126 L1006 140 L1024 140 V260 Z" fill="#efe3c6" />
+              <rect x="864" y="132" width="136" height="22" fill="#2a1d14" />
+              <text x="932" y="148" fill="#efe3c6" font-family="Big Shoulders Display, sans-serif" font-size="14" font-weight="800" text-anchor="middle" stroke="none" letter-spacing="2">GENERAL STORE</text>
+              <path d="M832 192 H1032 L1024 204 H840 Z" fill="url(#hatch)" />
+              <path d="M850 204 V260 M932 204 V260 M1014 204 V260" />
+              <rect x="868" y="216" width="40" height="26" fill="url(#hatch)" /><rect x="956" y="216" width="40" height="26" fill="url(#hatch)" />
+              <!-- saloon at the edge -->
+              <path d="M1044 260 V150 H1062 V138 H1140 V150 H1200" fill="#efe3c6" />
+              <rect x="1068" y="156" width="66" height="20" fill="url(#hatch)" />
+              <!-- water tank -->
+              <path d="M466 260 V200 M534 260 V200 M466 200 L534 260 M534 200 L466 260" fill="none" />
+              <path d="M458 200 V160 Q500 150 542 160 V200 Z" fill="url(#hatch)" />
+              <path d="M458 160 Q500 140 542 160" fill="#efe3c6" />
+              <!-- ground -->
+              <path d="M0 258 H1200" stroke-width="4" />
+            </g>
+            <g fill="#2a1d14" opacity=".9">
+              <circle cx="1110" cy="48" r="26" fill="none" stroke="#2a1d14" stroke-width="2" />
+              <path d="M1110 12 V2 M1110 94 V84 M1074 48 H1064 M1156 48 H1146 M1084 22 L1077 15 M1136 74 L1143 81 M1136 22 L1143 15 M1084 74 L1077 81" stroke="#2a1d14" stroke-width="2.4" />
+            </g>
+          </svg>
+
+          <div class="bs__body">
+            <div class="bs__text">
+              <p class="bs__lead"><span class="dropcap">S</span>kutečné westernové městečko v lese u Kamenice. Banka, úřad šerifa, kavárna, kasino, obchod a kostel se zvonem. Žádný dům tu není jen kulisa: do všech se dá vejít.</p>
+              <p class="bs__sub">Luk, laso, tomahawk i rýžovací pánev dostanete do ruky. Postavila to parta kamarádů vlastníma rukama a staví dál.</p>
+              <div class="bs__cta">
+                <a class="btn btn--red" href="#poptavka">Poptat školní výlet</a>
+                <a class="btn btn--ink" href="#hleda-se">Co si u nás zkusíte</a>
+              </div>
+            </div>
+            <figure class="cut cut--hero">
+              <img src="../img/b-akce-900.webp" width="900" height="506" alt="Westernová scéna před úřadem šerifa: střelec v klobouku vystřelí do vzduchu, na verandě a balkoně přihlížejí lidé" fetchpriority="high" />
+              <figcaption>Westernová scéna před úřadem šerifa.</figcaption>
+            </figure>
           </div>
-        </div>
-        <dl class="facts">
-          <div class="facts__now"><dt>Sezóna</dt><dd>V roce 2026 dočasně zavřeno</dd></div>
-          <div><dt>Vstupné</dt><dd>100 Kč</dd></div>
-          <div><dt>Děti do 120 cm</dt><dd>zdarma</dd></div>
-          <div><dt>Z dálnice</dt><dd>D1, exit 90</dd></div>
-        </dl>
+
+          <dl class="bs__facts">
+            <div><dt>Vstupné</dt><dd>100 Kč</dd></div>
+            <div><dt>Děti do 120 cm</dt><dd>zdarma</dd></div>
+            <div><dt>Parkování</dt><dd>zdarma</dd></div>
+            <div><dt>Pořádáme akce</dt><dd>od roku 1996</dd></div>
+          </dl>
+        </article>
       </section>
 
-      <section class="sec intro">
-        <p class="intro__big">Začalo to letními tábory v lese. Parta kamarádů k nim přistavěla jeden srub, pak druhý, a dnes tu stojí celá ulice.</p>
-        <div class="intro__cols">
-          <p>Na Mainstreet najdete banku, úřad šerifa, kavárnu, kasino, obchod a kostel se zvonem. Žádný z těch domů není kulisa, do všech se dá vejít a ve všech se něco děje.</p>
-          <p>Stonetown není zábavní park. Je to místo, kde si western vyzkoušíte vlastníma rukama a kde vám u toho vždycky někdo poradí. Baví to děti i dospělé.</p>
+      <!-- ============ SHERIFF NOTICE ============ -->
+      <section class="wall" id="vyhlaska" aria-labelledby="vyhl-h">
+        <div class="notice-row">
+          <article class="sheet notice">
+            <span class="nail nail--tc" aria-hidden="true"></span>
+            <svg class="seal" viewBox="0 0 120 120" aria-hidden="true">
+              <circle cx="60" cy="60" r="54" fill="none" stroke="currentColor" stroke-width="3" />
+              <circle cx="60" cy="60" r="46" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 4" />
+              <path d="M60 22 L68.8 47.9 L96.2 48.2 L74.2 64.5 L82.4 90.8 L60 75 L37.6 90.8 L45.8 64.5 L23.8 48.2 L51.2 47.9 Z" fill="currentColor" />
+              <circle cx="60" cy="60" r="7" fill="#efe3c6" />
+            </svg>
+            <p class="notice__from">Úřad šerifa města Stonetown</p>
+            <h2 class="notice__h" id="vyhl-h">Oznámení</h2>
+            <p class="notice__big">V roce 2026 je městečko pro veřejnost dočasně zavřené.</p>
+            <p>Sezónu 2027 sem doplníme, jakmile bude vyhlášena. Školy, oddíly a skupiny se na termín mohou ptát už teď.</p>
+            <a class="btn btn--red" href="#poptavka">Zeptat se na termín</a>
+          </article>
+
+          <article class="sheet tariff">
+            <span class="nail nail--tc" aria-hidden="true"></span>
+            <h2 class="tariff__h">Sazebník</h2>
+            <dl>
+              <div><dt>Vstupné za osobu</dt><dd>100 Kč</dd></div>
+              <div><dt>Děti do 120 cm</dt><dd>zdarma</dd></div>
+              <div><dt>Parkování</dt><dd>zdarma</dd></div>
+              <div><dt>Na návštěvu si nechte</dt><dd>2,5 hod.</dd></div>
+            </dl>
+            <p class="tariff__note">Vstupné platí i ten, kdo jde jen do kavárny.</p>
+          </article>
         </div>
       </section>
 
-      <section class="sec try" id="zkusit">
-        <h2 class="h2">Co si zkusíte</h2>
-        <ul class="try__list">
-          <li><h3>Luk</h3><p>Střelba na terč pro děti i dospělé.</p></li>
-          <li><h3>Tomahawk a nože</h3><p>Hod na dřevěný terč.</p></li>
-          <li><h3>Laso a bič</h3><p>Ukážeme, jak laso roztočit.</p></li>
-          <li><h3>Podkova</h3><p>Hod podkovou na kolík.</p></li>
-          <li><h3>Rýžování zlata</h3><p>Pánev, voda a trpělivost.</p></li>
-          <li><h3>Střelnice</h3><p>Na plechovky z dobových zbraní.</p></li>
-          <li><h3>Dílny</h3><p>Kožený váček, přívěsek, provaz, ruční papír.</p></li>
-          <li><h3>Muzeum</h3><p>Jak se osidloval Divoký západ.</p></li>
+      <!-- ============ WANTED WALL ============ -->
+      <section class="wall wall--wanted" id="hleda-se" aria-labelledby="hleda-h">
+        <div class="painted">
+          <h2 class="painted__h" id="hleda-h">Hledá se odvážlivec</h2>
+          <p class="painted__p">Osm disciplín Divokého západu. U každé je někdo, kdo poradí a předvede, jak na to.</p>
+        </div>
+
+        <ul class="posters">
+          <li class="poster" style="--r:-2.4deg">
+            <span class="nail nail--tc" aria-hidden="true"></span>
+            <p class="poster__w">Hledá se</p>
+            <div class="poster__pic">
+              <svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#2a1d14" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M28 12 Q78 50 28 88" /><path d="M28 12 L28 88" stroke-width="1.4" /><path d="M14 50 H90" /><path d="M90 50 L78 43 M90 50 L78 57" /><path d="M14 50 L8 43 M14 50 L8 57 M20 50 L14 43 M20 50 L14 57" stroke-width="2" /><path d="M24 10 L32 14 M24 90 L32 86" stroke-width="5" /></g><circle cx="50" cy="50" r="40" fill="url(#hatch-l)" opacity=".25" /></svg>
+            </div>
+            <h3 class="poster__name">Luk</h3>
+            <p class="poster__deed">Střelba na terč pro děti i dospělé.</p>
+            <p class="poster__reward"><span>Odměna:</span> šíp v černém</p>
+          </li>
+          <li class="poster" style="--r:1.8deg">
+            <span class="nail nail--tc" aria-hidden="true"></span>
+            <p class="poster__w">Hledá se</p>
+            <div class="poster__pic">
+              <svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#2a1d14" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 84 L72 22" /><path d="M62 16 Q84 14 88 32 L76 38 Q72 26 62 26 Z" fill="#2a1d14" /><path d="M78 84 L34 30" /><path d="M34 30 L24 14 Q40 18 42 26 Z" fill="url(#hatch)" /><path d="M70 76 L82 72 L86 82 L74 88 Z" fill="#2a1d14" /><path d="M24 80 L30 74 M28 86 L34 80" stroke-width="2" /></g><circle cx="50" cy="50" r="40" fill="url(#hatch-l)" opacity=".25" /></svg>
+            </div>
+            <h3 class="poster__name">Tomahawk a nože</h3>
+            <p class="poster__deed">Hod na dřevěný terč.</p>
+            <p class="poster__reward"><span>Odměna:</span> čepel ve dřevě</p>
+          </li>
+          <li class="poster" style="--r:-1.2deg">
+            <span class="nail nail--tc" aria-hidden="true"></span>
+            <p class="poster__w">Hledá se</p>
+            <div class="poster__pic">
+              <svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#2a1d14" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="44" cy="40" rx="30" ry="22" /><ellipse cx="44" cy="40" rx="24" ry="17" stroke-width="1.6" /><path d="M66 54 Q74 66 64 78 Q54 90 70 92" /><path d="M70 92 Q84 90 88 80" stroke-width="2" /><path d="M14 40 L10 52" stroke-width="2.4" /></g><circle cx="50" cy="50" r="40" fill="url(#hatch-l)" opacity=".25" /></svg>
+            </div>
+            <h3 class="poster__name">Laso a bič</h3>
+            <p class="poster__deed">Ukážeme, jak laso roztočit a kam mířit.</p>
+            <p class="poster__reward"><span>Odměna:</span> chycený kůl</p>
+          </li>
+          <li class="poster" style="--r:2.6deg">
+            <span class="nail nail--tc" aria-hidden="true"></span>
+            <p class="poster__w">Hledá se</p>
+            <div class="poster__pic">
+              <svg viewBox="0 0 100 100" aria-hidden="true"><g stroke="#2a1d14" stroke-width="3" stroke-linejoin="round"><path d="M28 86 L22 52 Q22 16 50 16 Q78 16 78 52 L72 86 L58 86 L62 52 Q62 32 50 32 Q38 32 38 52 L42 86 Z" fill="url(#hatch)" /></g><g fill="#efe3c6" stroke="#2a1d14" stroke-width="1.6"><circle cx="29" cy="40" r="3" /><circle cx="27" cy="58" r="3" /><circle cx="31" cy="74" r="3" /><circle cx="71" cy="40" r="3" /><circle cx="73" cy="58" r="3" /><circle cx="69" cy="74" r="3" /></g></svg>
+            </div>
+            <h3 class="poster__name">Podkova</h3>
+            <p class="poster__deed">Hod podkovou na kolík.</p>
+            <p class="poster__reward"><span>Odměna:</span> zvonění o kolík</p>
+          </li>
+          <li class="poster" style="--r:-2deg">
+            <span class="nail nail--tc" aria-hidden="true"></span>
+            <p class="poster__w">Hledá se</p>
+            <div class="poster__pic">
+              <svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#2a1d14" stroke-width="3.2" stroke-linejoin="round"><ellipse cx="50" cy="58" rx="40" ry="18" /><ellipse cx="50" cy="56" rx="26" ry="10" fill="url(#hatch-l)" stroke-width="1.6" /><path d="M10 58 Q12 74 50 78 Q88 74 90 58" /></g><g fill="#2a1d14"><path d="M44 52 l5 -3 l4 4 l-4 3 z" /><path d="M56 56 l4 -2 l3 3 l-4 2 z" /><circle cx="38" cy="58" r="2" /></g><g stroke="#2a1d14" stroke-width="2.4" stroke-linecap="round"><path d="M50 24 V34 M45 29 H55" /><path d="M70 14 V20 M67 17 H73" /><path d="M30 18 V24 M27 21 H33" /></g></svg>
+            </div>
+            <h3 class="poster__name">Rýžování zlata</h3>
+            <p class="poster__deed">Pánev, voda a trpělivost.</p>
+            <p class="poster__reward"><span>Odměna:</span> zrnko na dně pánve</p>
+          </li>
+          <li class="poster" style="--r:1.4deg">
+            <span class="nail nail--tc" aria-hidden="true"></span>
+            <p class="poster__w">Hledá se</p>
+            <div class="poster__pic">
+              <svg viewBox="0 0 100 100" aria-hidden="true"><g stroke="#2a1d14" stroke-width="3" stroke-linejoin="round"><rect x="10" y="70" width="80" height="10" fill="url(#hatch)" /><path d="M20 80 V94 M80 80 V94" fill="none" /><rect x="16" y="44" width="18" height="26" fill="#efe3c6" /><rect x="41" y="38" width="18" height="32" fill="url(#hatch-l)" /><path d="M68 70 L74 52 L90 56 L84 72" fill="#efe3c6" /></g><g fill="#2a1d14"><circle cx="50" cy="52" r="3.4" /><circle cx="25" cy="56" r="2.6" /></g><g fill="none" stroke="#2a1d14" stroke-width="2"><circle cx="50" cy="18" r="10" /><circle cx="50" cy="18" r="4" /><path d="M50 4 V10 M50 26 V32 M36 18 H42 M58 18 H64" /></g></svg>
+            </div>
+            <h3 class="poster__name">Střelnice</h3>
+            <p class="poster__deed">Na plechovky z dobových zbraní.</p>
+            <p class="poster__reward"><span>Odměna:</span> plechovka v trávě</p>
+          </li>
+          <li class="poster" style="--r:-1.6deg">
+            <span class="nail nail--tc" aria-hidden="true"></span>
+            <p class="poster__w">Hledá se</p>
+            <div class="poster__pic">
+              <svg viewBox="0 0 100 100" aria-hidden="true"><g stroke="#2a1d14" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M34 36 Q20 52 22 70 Q26 90 50 90 Q74 90 78 70 Q80 52 66 36 Z" fill="url(#hatch-l)" /><path d="M32 36 Q50 28 68 36 Q58 42 50 40 Q42 42 32 36 Z" fill="#efe3c6" /><path d="M38 34 L34 18 M62 34 L68 20 M50 40 L50 52" fill="none" /><circle cx="50" cy="60" r="8" fill="#efe3c6" /><path d="M50 55 l1.6 3.4 3.6 .4 -2.7 2.4 .8 3.6 -3.3 -1.9 -3.3 1.9 .8 -3.6 -2.7 -2.4 3.6 -.4 z" fill="#2a1d14" stroke-width="0" /></g><path d="M28 76 Q50 82 72 76" fill="none" stroke="#2a1d14" stroke-width="1.6" stroke-dasharray="3 3" /></svg>
+            </div>
+            <h3 class="poster__name">Tvořivé dílny</h3>
+            <p class="poster__deed">Kožený váček, přívěsek, provaz, ruční papír, dřevořezba.</p>
+            <p class="poster__reward"><span>Odměna:</span> výrobek domů</p>
+          </li>
+          <li class="poster" style="--r:2.2deg">
+            <span class="nail nail--tc" aria-hidden="true"></span>
+            <p class="poster__w">Hledá se</p>
+            <div class="poster__pic">
+              <svg viewBox="0 0 100 100" aria-hidden="true"><g stroke="#2a1d14" stroke-width="3" stroke-linejoin="round"><path d="M16 64 V44 Q16 20 50 20 Q84 20 84 44 V64 Z" fill="#efe3c6" /><path d="M30 64 V30 M50 64 V20 M70 64 V30" fill="none" stroke-width="1.6" /><path d="M10 64 H90 V70 H10 Z" fill="url(#hatch)" /></g><g fill="none" stroke="#2a1d14" stroke-width="3"><circle cx="28" cy="80" r="12" /><circle cx="74" cy="80" r="12" /><path d="M28 68 V92 M16 80 H40 M74 68 V92 M62 80 H86" stroke-width="1.6" /><path d="M90 66 L98 58" /></g></svg>
+            </div>
+            <h3 class="poster__name">Muzeum</h3>
+            <p class="poster__deed">Jak se osidloval Divoký západ.</p>
+            <p class="poster__reward"><span>Odměna:</span> příběh osadníků</p>
+          </li>
         </ul>
+        <p class="painted__foot">Na verandě kavárny mezitím voní káva a domácí jablečný závin.</p>
       </section>
 
-      <section class="seasons" aria-label="Městečko v létě a v zimě">
-        <figure>
-          <picture>
-            <source media="(max-width: 700px)" srcset="../img/leto-700.webp" />
-            <img src="../img/leto-1400.webp" width="1400" height="939" alt="Letní pohled do ulice Stonetownu s dřevěnými domy a verandami" loading="lazy" />
-          </picture>
-          <figcaption>Léto. Na verandě kavárny je káva a domácí jablečný závin.</figcaption>
-        </figure>
-        <figure>
-          <picture>
-            <source media="(max-width: 700px)" srcset="../img/zima-900.webp" />
-            <img src="../img/zima-1800.webp" width="1800" height="808" alt="Zasněžená hlavní ulice Stonetownu s obchodem General Store" loading="lazy" />
-          </picture>
-          <figcaption>Zima. Městečko patří zimnímu táboření a soutěži Lovci kožešin.</figcaption>
-        </figure>
-      </section>
-
-      <section class="dark" id="programy">
-        <div class="sec">
-          <h2 class="h2">Výlety, tábory a akce pro skupiny</h2>
-          <p class="lead">Vyberte program a rovnou uvidíte dny, kdy je místo. Rezervace je potřeba vždy, jídlo zařídíme po domluvě.</p>
-          <div class="progs" data-programs></div>
-          <p class="small">Termíny a kapacity jsou v téhle ukázce vzorové. Ceny školních programů vycházejí z dřívějších sezón.</p>
-        </div>
-      </section>
-
-      <section class="sec" id="poptavka">
-        <h2 class="h2">Poptávka termínu</h2>
-        <p class="lead">Formulář se přizpůsobí programu, který vyberete. Hlídá velikost skupiny a rovnou počítá odhad ceny.</p>
-        <div data-inquiry></div>
-      </section>
-
-      <section class="sec" id="program">
-        <h2 class="h2">Program 2026</h2>
-        <p class="lead">Takhle vypadal poslední vyhlášený rok. Termíny na rok 2027 doplníme.</p>
-        <ol class="evs" data-events></ol>
-      </section>
-
-      <section class="way" id="cesta">
-        <div class="sec way__in">
-          <h2 class="h2">Cesta a vstupné</h2>
-          <div class="way__grid">
-            <div class="way__card">
-              <p class="way__big">D1, exit 90</p>
-              <h3>Autem</h3>
-              <p>Sjeďte u Humpolce. Dál vás na parkoviště dovedou cedule Stonetown. Parkování je zdarma.</p>
+      <!-- ============ GAZETTE ============ -->
+      <section class="wall" id="kronika" aria-labelledby="kron-h">
+        <article class="sheet gazette">
+          <span class="nail nail--tl" aria-hidden="true"></span><span class="nail nail--tr" aria-hidden="true"></span>
+          <header class="gz__head">
+            <p class="gz__meta"><span>Z kroniky městečka</span><span>Kamenice u Humpolce</span><span>Od roku 1996</span></p>
+            <h2 class="gz__title" id="kron-h">Z letních táborů vyrostlo město</h2>
+          </header>
+          <div class="gz__cols">
+            <div class="gz__col">
+              <p class="gz__first"><span class="dropcap dropcap--ink">S</span>tonetown začal jako parta kamarádů, která pořádala letní tábory v lese nedaleko Humpolce. Postupně přibývaly stavby, až z toho bylo celé městečko. A roste pořád.</p>
+              <p>Na hlavní ulici, které tu nikdo neřekne jinak než Mainstreet, dnes stojí banka, úřad šerifa, kavárna, kasino, obchod a kostel se zvonem. Přibyla kožedělná dílna a truhlářský koutek.</p>
+              <blockquote class="gz__quote">
+                <p>„Poblíž je vesnička Kamenice, a tak se to u nás mělo jmenovat Stonevillage, ale my jsme chtěli být město.“</p>
+                <footer>Petr Řádek, starosta Stonetownu</footer>
+              </blockquote>
             </div>
-            <div class="way__card">
-              <p class="way__big">Po modré</p>
-              <h3>Vlakem</h3>
-              <p>Vystupte na zastávce Kamenice u Humpolce na trati Havlíčkův Brod – Humpolec a jděte po modré turistické značce.</p>
-            </div>
-            <div class="way__card">
-              <p class="way__big">100 Kč</p>
-              <h3>Vstupné</h3>
-              <p>Za osobu. Děti do 120 cm neplatí. Vstupné platí i ten, kdo jde jen do kavárny. Na návštěvu si nechte 2,5 hodiny.</p>
+            <figure class="cut">
+              <img src="../img/b-rano-800.webp" width="800" height="600" loading="lazy" alt="Hlavní ulice Stonetownu v ranním světle, dlouhé stíny dřevěných domů s verandami" />
+              <figcaption>Mainstreet v ranním světle.</figcaption>
+            </figure>
+            <div class="gz__col">
+              <blockquote class="gz__quote gz__quote--big">
+                <p>„Není tu jediný barák, který by byl jenom kulisou. Jsou to všechno plnohodnotné funkční objekty.“</p>
+                <footer>Petr Řádek, starosta Stonetownu</footer>
+              </blockquote>
+              <p>V zimě tu hoří ohně na zimním táboření a lovci kožešin poměřují síly ve westernových disciplínách. Městečko slouží i jako kulisa pro LARP a pro filmaře.</p>
+              <p class="gz__src">Podle reportáže Českého rozhlasu z 25. 9. 2021.</p>
             </div>
           </div>
-          <p><a class="link" href="https://www.google.com/maps/search/?api=1&query=49.52155%2C15.41825">Kamenice 103, Herálec – otevřít v mapě</a></p>
+          <figure class="cut cut--wide">
+            <img src="../img/b-zima-1800.webp" srcset="../img/b-zima-900.webp 900w, ../img/b-zima-1800.webp 1800w" sizes="(max-width: 70rem) 100vw, 70rem" width="1800" height="808" loading="lazy" alt="Zasněžená hlavní ulice Stonetownu s obchodem General Store" />
+            <figcaption>General Store pod sněhem. Zimní táboření má za sebou šestnáct ročníků.</figcaption>
+          </figure>
+        </article>
+      </section>
+
+      <!-- ============ PROGRAMMES ============ -->
+      <section class="wall" id="programy" aria-labelledby="prog-h">
+        <div class="painted">
+          <h2 class="painted__h" id="prog-h">Výlety, tábory a&nbsp;skupiny</h2>
+          <p class="painted__p">Vyberte program a rovnou uvidíte dny, kdy je místo. Rezervace je potřeba vždy, jídlo zařídíme po domluvě.</p>
         </div>
+        <div class="progs" data-programs></div>
+        <div class="extra">
+          <article class="sheet handbill">
+            <h3>Letní tábor</h3>
+            <p>V roce 2026 třicátý ročník: „Čarodějův učeň“, 5.–18. 7. 2026, pro děti od 7 do 15 let.</p>
+            <a href="mailto:tabor@stonetown.cz">tabor@stonetown.cz</a>
+          </article>
+          <article class="sheet handbill">
+            <h3>LARP a natáčení</h3>
+            <p>Celé městečko jako kulisa pro LARP i pro filmaře: westerny, historické filmy, reklamy a hudební klipy.</p>
+            <a href="mailto:info@stonetown.cz">info@stonetown.cz</a>
+          </article>
+        </div>
+        <p class="painted__foot">Termíny a kapacity jsou v této ukázce vzorové.</p>
+      </section>
+
+      <!-- ============ TELEGRAM ============ -->
+      <section class="wall" id="poptavka" aria-labelledby="tel-h">
+        <div class="sheet telegram">
+          <span class="nail nail--tl" aria-hidden="true"></span><span class="nail nail--tr" aria-hidden="true"></span>
+          <header class="tel__head">
+            <p class="tel__co">Stonetown Telegraph Co.</p>
+            <h2 class="tel__h" id="tel-h">Poptávka termínu</h2>
+            <p class="tel__p">Vyplňte blanket, odpovíme e-mailem a termín potvrdíme. Poptávka je nezávazná.</p>
+          </header>
+          <div data-inquiry></div>
+        </div>
+      </section>
+
+      <!-- ============ SHOW BILL ============ -->
+      <section class="wall" id="program" aria-labelledby="bill-h">
+        <article class="sheet bill">
+          <span class="nail nail--tc" aria-hidden="true"></span>
+          <p class="bill__top">Velkolepý</p>
+          <h2 class="bill__h" id="bill-h">Program <span>2026</span></h2>
+          <p class="bill__sub">Takhle vypadal poslední vyhlášený rok. Termíny na rok 2027 doplníme.</p>
+          <ol class="evs" data-events></ol>
+        </article>
+      </section>
+
+      <!-- ============ TIMETABLE ============ -->
+      <section class="wall" id="cesta" aria-labelledby="cesta-h">
+        <article class="sheet timetable">
+          <span class="nail nail--tl" aria-hidden="true"></span><span class="nail nail--tr" aria-hidden="true"></span>
+          <h2 class="tt__h" id="cesta-h">Jízdní řád do Stonetownu</h2>
+          <div class="tt">
+            <div class="tt__row">
+              <p class="tt__how">Autem</p>
+              <p>Dálnice D1, exit 90 u Humpolce. Dál po cedulích Stonetown až na parkoviště. Parkování je zdarma.</p>
+            </div>
+            <div class="tt__row">
+              <p class="tt__how">Vlakem</p>
+              <p>Trať Havlíčkův Brod – Humpolec, zastávka Kamenice u Humpolce. Odtud pěšky po modré turistické značce.</p>
+            </div>
+            <div class="tt__row">
+              <p class="tt__how">Adresa</p>
+              <p>Kamenice 103, 582 55 Herálec <a class="tt__map" href="https://www.google.com/maps/search/?api=1&query=49.52155%2C15.41825">Otevřít v mapě</a></p>
+            </div>
+          </div>
+          <figure class="cut cut--side">
+            <img src="../img/b-bic-600.webp" width="600" height="397" loading="lazy" alt="Ukázka práce s bičem na louce, kolem sedí diváci" />
+            <figcaption>Ukázka práce s bičem.</figcaption>
+          </figure>
+        </article>
       </section>
     </main>
 
