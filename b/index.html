@@ -43,6 +43,7 @@
         <a href="#hleda-se">Co si zkusíte</a>
         <a href="#kronika">Příběh</a>
         <a href="#programy">Výlety a tábory</a>
+        <a href="#inzerce">Tábor a akce</a>
         <a href="#program">Program roku</a>
         <a href="#cesta">Cesta</a>
       </nav>
@@ -59,7 +60,7 @@
           <p class="bs__top"><span aria-hidden="true">☞</span> Vyhlašuje se všem rodinám, školám a oddílům <span aria-hidden="true">☜</span></p>
           <p class="bs__kicker">Westernové městečko</p>
           <h1 class="bs__name" id="hero-title">Stonetown</h1>
-          <div class="bs__rule" aria-hidden="true"><span>★</span><span>★</span><span>★</span></div>
+          <div class="bs__rule" aria-hidden="true"><svg viewBox="0 0 120 24"><path d="M12 3l2.6 6.4 6.9.4-5.3 4.4 1.7 6.7L12 17.2l-5.9 3.7 1.7-6.7L2.5 9.8l6.9-.4z"/><path d="M60 1l3.1 7.7 8.3.5-6.4 5.3 2.1 8.1L60 18.1l-7.1 4.5 2.1-8.1-6.4-5.3 8.3-.5z"/><path d="M108 3l2.6 6.4 6.9.4-5.3 4.4 1.7 6.7-5.9-3.7-5.9 3.7 1.7-6.7-5.3-4.4 6.9-.4z"/></svg></div>
           <p class="bs__where">v lesích u Humpolce</p>
 
           <svg class="bs__town" viewBox="0 0 1200 260" role="img" aria-labelledby="town-t">
@@ -140,12 +141,6 @@
             </figure>
           </div>
 
-          <dl class="bs__facts">
-            <div><dt>Vstupné</dt><dd>100 Kč</dd></div>
-            <div><dt>Děti do 120 cm</dt><dd>zdarma</dd></div>
-            <div><dt>Parkování</dt><dd>zdarma</dd></div>
-            <div><dt>Pořádáme akce</dt><dd>od roku 1996</dd></div>
-          </dl>
         </article>
       </section>
 
@@ -160,11 +155,11 @@
               <path d="M60 22 L68.8 47.9 L96.2 48.2 L74.2 64.5 L82.4 90.8 L60 75 L37.6 90.8 L45.8 64.5 L23.8 48.2 L51.2 47.9 Z" fill="currentColor" />
               <circle cx="60" cy="60" r="7" fill="#efe3c6" />
             </svg>
-            <p class="notice__from">Úřad šerifa města Stonetown</p>
             <h2 class="notice__h" id="vyhl-h">Oznámení</h2>
             <p class="notice__big">V roce 2026 je městečko pro veřejnost dočasně zavřené.</p>
             <p>Sezónu 2027 sem doplníme, jakmile bude vyhlášena. Školy, oddíly a skupiny se na termín mohou ptát už teď.</p>
             <a class="btn btn--red" href="#poptavka">Zeptat se na termín</a>
+            <p class="notice__from">Úřad šerifa města Stonetown</p>
           </article>
 
           <article class="sheet tariff">
@@ -322,19 +317,41 @@
           <p class="painted__p">Vyberte program a rovnou uvidíte dny, kdy je místo. Rezervace je potřeba vždy, jídlo zařídíme po domluvě.</p>
         </div>
         <div class="progs" data-programs></div>
-        <div class="extra">
-          <article class="sheet handbill">
-            <h3>Letní tábor</h3>
-            <p>V roce 2026 třicátý ročník: „Čarodějův učeň“, 5.–18. 7. 2026, pro děti od 7 do 15 let.</p>
-            <a href="mailto:tabor@stonetown.cz">tabor@stonetown.cz</a>
-          </article>
-          <article class="sheet handbill">
-            <h3>LARP a natáčení</h3>
-            <p>Celé městečko jako kulisa pro LARP i pro filmaře: westerny, historické filmy, reklamy a hudební klipy.</p>
-            <a href="mailto:info@stonetown.cz">info@stonetown.cz</a>
-          </article>
-        </div>
         <p class="painted__foot">Termíny a kapacity jsou v této ukázce vzorové.</p>
+      </section>
+
+      <!-- ============ CLASSIFIEDS ============ -->
+      <section class="wall" id="inzerce" aria-labelledby="inz-h">
+        <article class="sheet ads">
+          <span class="nail nail--tl" aria-hidden="true"></span><span class="nail nail--tr" aria-hidden="true"></span>
+          <h2 class="ads__h" id="inz-h">Inzerce</h2>
+          <div class="ads__grid">
+            <section class="ad ad--big" aria-labelledby="ad-tabor">
+              <h3 id="ad-tabor">Letní tábor 2026</h3>
+              <p class="ad__name">„Čarodějův učeň – Tajemství Černého mlýna“</p>
+              <p>Třicátý ročník. 5.–18. 7. 2026 pro děti od 7 do 15 let. Jídlo pětkrát denně, spí se v městečku.</p>
+              <p class="ad__price">8 250 Kč</p>
+              <p class="ad__contact">Přihlášky: <a href="mailto:tabor@stonetown.cz">tabor@stonetown.cz</a></p>
+            </section>
+            <section class="ad" aria-labelledby="ad-sruby">
+              <h3 id="ad-sruby">Nocleh ve srubech</h3>
+              <p>10 pokojů, 72 lůžek přímo v městečku. V sezóně pro tábory, školy v přírodě a vícedenní akce.</p>
+              <p class="ad__price">120–240 Kč <small>za osobu a noc</small></p>
+              <p class="tbc">Údaje z veřejných katalogů, ověříme s provozovatelem.</p>
+            </section>
+            <section class="ad" aria-labelledby="ad-oslavy">
+              <h3 id="ad-oslavy">Svatby, oslavy, firemní akce</h3>
+              <p>Pronajmeme celé městečko: banku, úřad šerifa, kasino i kostel se zvonem. Program na míru.</p>
+              <p class="ad__contact"><a href="mailto:info@stonetown.cz">info@stonetown.cz</a></p>
+              <p class="tbc">Nabídku ověříme s provozovatelem.</p>
+            </section>
+            <section class="ad ad--dark" aria-labelledby="ad-larp">
+              <h3 id="ad-larp">LARP a natáčení</h3>
+              <p>Kulisa pro LARP, westerny, historické filmy, reklamy a hudební klipy.</p>
+              <p class="ad__contact"><a href="mailto:info@stonetown.cz">info@stonetown.cz</a></p>
+            </section>
+          </div>
+        </article>
       </section>
 
       <!-- ============ TELEGRAM ============ -->
@@ -342,7 +359,6 @@
         <div class="sheet telegram">
           <span class="nail nail--tl" aria-hidden="true"></span><span class="nail nail--tr" aria-hidden="true"></span>
           <header class="tel__head">
-            <p class="tel__co">Stonetown Telegraph Co.</p>
             <h2 class="tel__h" id="tel-h">Poptávka termínu</h2>
             <p class="tel__p">Vyplňte blanket, odpovíme e-mailem a termín potvrdíme. Poptávka je nezávazná.</p>
           </header>
@@ -380,10 +396,30 @@
               <p>Kamenice 103, 582 55 Herálec <a class="tt__map" href="https://www.google.com/maps/search/?api=1&query=49.52155%2C15.41825">Otevřít v mapě</a></p>
             </div>
           </div>
-          <figure class="cut cut--side">
-            <img src="../img/b-bic-600.webp" width="600" height="397" loading="lazy" alt="Ukázka práce s bičem na louce, kolem sedí diváci" />
-            <figcaption>Ukázka práce s bičem.</figcaption>
-          </figure>
+          <svg class="route" viewBox="0 0 420 320" role="img" aria-label="Schéma cesty: dálnice D1, exit 90 u Humpolce, odtud silnicí ke Stonetownu u Kamenice. Vlakem do zastávky Kamenice u Humpolce a po modré značce.">
+            <defs><pattern id="rt-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(40)"><path d="M0 0v6" stroke="#2a1d14" stroke-width="1.2" opacity=".5"/></pattern></defs>
+            <rect x="4" y="4" width="412" height="312" fill="none" stroke="#2a1d14" stroke-width="3"/>
+            <rect x="11" y="11" width="398" height="298" fill="none" stroke="#2a1d14" stroke-width="1"/>
+            <path d="M330 292c20-25 50-30 79-25v42H318c0-8 5-13 12-17z" fill="url(#rt-hatch)"/>
+            <path d="M352 298l9-20 9 20zM372 300l8-17 8 17zM336 302l7-15 7 15z" fill="#2a1d14"/>
+            <path d="M11 262L409 52" stroke="#2a1d14" stroke-width="9"/>
+            <path d="M11 262L409 52" stroke="#efe3c6" stroke-width="3" stroke-dasharray="12 8"/>
+            <path d="M30 80C110 100 160 200 190 250" fill="none" stroke="#2a1d14" stroke-width="2.4"/>
+            <path d="M30 80C110 100 160 200 190 250" fill="none" stroke="#2a1d14" stroke-width="8" stroke-dasharray="1.5 9"/>
+            <path d="M300 110C294 140 290 170 295 196" fill="none" stroke="#9b2a1c" stroke-width="3.5"/>
+            <path d="M196 248C230 240 260 230 282 220" fill="none" stroke="#2f4a68" stroke-width="2.5" stroke-dasharray="2 5" stroke-linecap="round"/>
+            <circle cx="300" cy="110" r="7" fill="#efe3c6" stroke="#2a1d14" stroke-width="2.5"/>
+            <rect x="184" y="244" width="12" height="12" fill="#2a1d14"/>
+            <path d="M296 196l4.4 10.8 11.6.7-8.9 7.4 2.8 11.3-9.9-6.2-9.9 6.2 2.8-11.3-8.9-7.4 11.6-.7z" fill="#9b2a1c" stroke="#2a1d14" stroke-width="1.5"/>
+            <text x="40" y="220" class="rt rt--road">D1</text>
+            <text x="318" y="140" class="rt">exit 90</text>
+            <text x="318" y="157" class="rt">Humpolec</text>
+            <text x="30" y="68" class="rt rt--s">trať H. Brod – Humpolec</text>
+            <text x="178" y="280" class="rt rt--s" text-anchor="end">zastávka Kamenice</text>
+            <text x="300" y="266" class="rt rt--town" text-anchor="middle">Stonetown</text>
+            <text x="396" y="34" class="rt rt--s" text-anchor="end">na Prahu</text>
+            <text x="24" y="298" class="rt rt--s">schéma, ne v měřítku</text>
+          </svg>
         </article>
       </section>
     </main>
@@ -393,11 +429,16 @@
         <div>
           <p class="foot__name">Stonetown</p>
           <p>Westernové městečko Stonetown, z.s.<br />Kamenice 103, 582 55 Herálec</p>
+          <a class="btn btn--red foot__cta" href="#poptavka">Poptat termín</a>
         </div>
         <div>
           <h2 class="foot__h">Napište nebo zavolejte</h2>
           <p><a href="mailto:info@stonetown.cz">info@stonetown.cz</a><br /><a href="tel:+420776706191">+420 776 706 191</a></p>
           <p>Tábory: <a href="mailto:tabor@stonetown.cz">tabor@stonetown.cz</a></p>
+        </div>
+        <div>
+          <h2 class="foot__h">Na nástěnce</h2>
+          <p><a href="#hleda-se">Co si zkusíte</a><br /><a href="#programy">Výlety a tábory</a><br /><a href="#inzerce">Tábor, nocleh, akce</a><br /><a href="#cesta">Cesta</a></p>
         </div>
         <div>
           <h2 class="foot__h">Fotky z akcí</h2>

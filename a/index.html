@@ -48,6 +48,7 @@
         <li><a href="#aktivity">Co zkusíte</a></li>
         <li><a href="#pribeh">Příběh</a></li>
         <li><a href="#programy">Programy</a></li>
+        <li><a href="#nabidka">Tábor a akce</a></li>
         <li><a href="#program">Program roku</a></li>
         <li><a href="#cesta">Cesta</a></li>
       </ul>
@@ -58,6 +59,7 @@
           <li><a href="#aktivity">Co zkusíte</a></li>
           <li><a href="#pribeh">Příběh</a></li>
           <li><a href="#programy">Programy</a></li>
+        <li><a href="#nabidka">Tábor a akce</a></li>
           <li><a href="#program">Program roku</a></li>
           <li><a href="#cesta">Cesta</a></li>
         </ul>
@@ -80,7 +82,7 @@
   </div>
   <div class="hero__title">
     <h1 id="hero-t"><span class="hero__name">Stonetown</span></h1>
-    <p class="hero__tag">Westernové městečko v lese na Vysočině · od roku 1996</p>
+    <p class="hero__tag">Westernové městečko v lese na Vysočině, od roku 1996</p>
   </div>
   <div class="hero__body">
     <p class="hero__lede">Opravdové městečko Divokého západu u Kamenice u Humpolce. Banka, úřad šerifa, kavárna, kasino, obchod i kostel se zvonem. Žádný dům tu není jen kulisa.</p>
@@ -127,7 +129,7 @@
 <!-- 3 · Activities as the opening cast list -->
 <section class="scene scene--acts" id="aktivity" aria-labelledby="aktivity-t">
   <div class="wrap">
-    <div class="head">
+    <div class="head head--card">
       <h2 id="aktivity-t" class="h2">Osm disciplín<br>Divokého západu</h2>
       <p class="big-p">U každé je někdo, kdo poradí nebo předvede, jak na to. Mezi tím na verandě kavárny voní káva a domácí jablečný štrúdl.</p>
     </div>
@@ -154,7 +156,10 @@
         <p>Na Mainstreet dnes stojí banka, úřad šerifa, kavárna, kasino, obchod a kostel se zvonem. Je tu i kožedělná dílna a truhlářský koutek. Městečko slouží jako kulisa pro LARP i pro filmaře: westerny, historické filmy, reklamy a hudební klipy.</p>
         <p class="src">Podle reportáže Českého rozhlasu z 25. 9. 2021.</p>
       </div>
-      <p class="story__year" aria-hidden="true">1996<small>městečko v provozu od roku</small></p>
+      <blockquote class="subtitle">
+        <p>„Není tu jediný barák, který by byl jenom kulisou. Jsou to všechno plnohodnotné funkční objekty.“</p>
+        <footer>Petr Řádek, starosta Stonetownu, pro Český rozhlas</footer>
+      </blockquote>
     </div>
   </div>
   <div class="strip" aria-label="Záběry z městečka">
@@ -164,11 +169,11 @@
     </figure>
     <figure class="strip__f">
       <img src="../img/a-leto-700.webp" srcset="../img/a-leto-700.webp 700w, ../img/a-leto-1400.webp 1400w" sizes="(max-width: 50rem) 88vw, 46vw" width="1400" height="586" alt="Městečko v létě: dvoupatrové dřevěné domy s balkony a prašná ulice." loading="lazy">
-      <figcaption><span>„Není tu jediný barák, který by byl jenom kulisou. Jsou to všechno plnohodnotné funkční objekty.“</span></figcaption>
+      <figcaption><span>Mainstreet v létě. Domy s verandami stojí na obou stranách ulice.</span></figcaption>
     </figure>
     <figure class="strip__f">
       <img src="../img/a-zima-800.webp" srcset="../img/a-zima-800.webp 800w, ../img/a-zima-1600.webp 1600w" sizes="(max-width: 50rem) 88vw, 46vw" width="1600" height="669" alt="Mainstreet pod sněhem, vlevo budova General Store." loading="lazy">
-      <figcaption><span>Petr Řádek, starosta Stonetownu · Český rozhlas, 2021</span></figcaption>
+      <figcaption><span>V zimě se tu táboří a soutěží Lovci kožešin.</span></figcaption>
     </figure>
   </div>
 </section>
@@ -176,7 +181,7 @@
 <!-- 5 · Programmes + inquiry -->
 <section class="scene scene--progs" id="programy" aria-labelledby="programy-t">
   <div class="wrap">
-    <div class="head">
+    <div class="head head--stack">
       <h2 id="programy-t" class="h2">Vyberte program,<br>zbytek domluvíme</h2>
       <p class="big-p">Školní výlet trvá asi 3 hodiny a stojí zhruba 150–250 Kč na dítě podle velikosti skupiny. Doprovod neplatí, děti dostanou pracovní listy, stravování po domluvě. Rezervace je nutná.</p>
     </div>
@@ -184,17 +189,42 @@
       <noscript><p>Nabídka programů se načítá skriptem. Napište nám na info@stonetown.cz nebo zavolejte na +420 776 706 191.</p></noscript>
     </div>
     <p class="sample">Termíny a kapacity v této ukázce jsou vzorová data.</p>
-    <div class="extras">
-      <article class="extra">
-        <h3>Letní tábor</h3>
-        <p>V roce 2026 třicátý ročník: „Čarodějův učeň“, 5.–18. 7. 2026, pro děti od 7 do 15 let. V zimě se tu táboří a soutěží Lovci kožešin.</p>
-        <a href="mailto:tabor@stonetown.cz">tabor@stonetown.cz</a>
-      </article>
-      <article class="extra">
-        <h3>LARP a natáčení</h3>
-        <p>Celé městečko jako kulisa pro LARP i pro filmaře: westerny, historické filmy, reklamy a hudební klipy.</p>
-        <a href="mailto:info@stonetown.cz">info@stonetown.cz</a>
-      </article>
+  </div>
+</section>
+
+<!-- 5b · Everything else the town does -->
+<section class="scene scene--more" id="nabidka" aria-labelledby="nabidka-t">
+  <div class="wrap more">
+    <figure class="more__still">
+      <img src="../img/a-bic-700.webp" srcset="../img/a-bic-700.webp 700w, ../img/a-bic-1360.webp 1360w" sizes="(max-width: 58rem) 100vw, 40vw" width="1360" height="569" alt="Vystoupení s bičem na louce, diváci sedí na lavicích před srubem." loading="lazy">
+      <figcaption>Vystoupení s bičem na louce za městečkem.</figcaption>
+    </figure>
+    <div class="more__body">
+      <h2 id="nabidka-t" class="h2">Také na programu</h2>
+      <ul class="bill">
+        <li>
+          <h3>Letní tábor 2026</h3>
+          <p>Třicátý ročník „Čarodějův učeň – Tajemství Černého mlýna“. 5.–18. 7. 2026, děti od 7 do 15 let, jídlo pětkrát denně.</p>
+          <p class="bill__meta"><b>8 250 Kč</b> <a href="mailto:tabor@stonetown.cz">tabor@stonetown.cz</a></p>
+        </li>
+        <li>
+          <h3>Ubytování ve srubech</h3>
+          <p>Deset pokojů a 72 lůžek přímo v městečku, v sezóně. Hodí se pro tábory, školy v přírodě a vícedenní akce.</p>
+          <p class="bill__meta"><b>120–240 Kč</b> za osobu a noc</p>
+          <p class="tbc">Údaje z veřejných katalogů, ověříme s provozovatelem.</p>
+        </li>
+        <li>
+          <h3>Oslavy, svatby, firemní akce</h3>
+          <p>Celé městečko pro vaši akci: banka, úřad šerifa, kasino i kostel se zvonem. Program připravíme na míru.</p>
+          <p class="bill__meta"><a href="mailto:info@stonetown.cz">info@stonetown.cz</a></p>
+          <p class="tbc">Nabídku ověříme s provozovatelem.</p>
+        </li>
+        <li>
+          <h3>LARP a natáčení</h3>
+          <p>Městečko slouží jako kulisa pro LARP i pro filmaře: westerny, historické filmy, reklamy a hudební klipy.</p>
+          <p class="bill__meta"><a href="mailto:info@stonetown.cz">info@stonetown.cz</a></p>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
@@ -226,10 +256,6 @@
       <p class="marquee__foot">Sezónu 2027 doplníme, jakmile bude vyhlášená.</p>
      </div>
     </div>
-    <figure class="still">
-      <img src="../img/a-bic-700.webp" srcset="../img/a-bic-700.webp 700w, ../img/a-bic-1360.webp 1360w" sizes="(max-width: 60rem) 100vw, 60rem" width="1360" height="569" alt="Vystoupení s bičem na louce, diváci sedí na lavicích před srubem." loading="lazy">
-      <figcaption>Vystoupení s bičem na louce</figcaption>
-    </figure>
   </div>
 </section>
 
@@ -284,7 +310,7 @@
       <div><dt>E-mail</dt><dd><a href="mailto:info@stonetown.cz">info@stonetown.cz</a></dd></div>
       <div><dt>Tábory</dt><dd><a href="mailto:tabor@stonetown.cz">tabor@stonetown.cz</a></dd></div>
       <div><dt>Telefon</dt><dd><a href="tel:+420776706191">+420 776 706 191</a></dd></div>
-      <div><dt>Sledujte</dt><dd><a href="https://www.instagram.com/stonetown_wm/">Instagram</a> · <a href="https://www.facebook.com/p/Westernov%C3%A9-m%C4%9Bste%C4%8Dko-Stonetown-100056993868302/">Facebook</a></dd></div>
+      <div><dt>Sledujte</dt><dd><a href="https://www.instagram.com/stonetown_wm/">Instagram</a>, <a href="https://www.facebook.com/p/Westernov%C3%A9-m%C4%9Bste%C4%8Dko-Stonetown-100056993868302/">Facebook</a></dd></div>
     </dl>
     <p class="credits__end" aria-hidden="true">Konec</p>
     <p class="credits__small">V lese u Kamenice u Humpolce od roku 1996. <a href="#top">Zpět nahoru</a></p>

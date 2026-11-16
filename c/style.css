@@ -71,7 +71,6 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
   line-height: 1.06;
   letter-spacing: .005em;
   color: var(--gold-hi);
-  text-shadow: .03em .045em 0 #4a2a08, 0 .1em .3em rgba(0, 0, 0, .45);
 }
 
 .head {
@@ -234,7 +233,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
   .bar__in { gap: .5rem; padding-inline: .8rem; }
   .bar__logo { font-size: 1.12rem; gap: .4rem; }
   .bar__logo svg { width: 17px; height: 17px; }
-  .bar__menu summary { padding: .38rem .5rem .34rem; font-size: .72rem; }
+  .bar__menu summary { padding: .38rem .5rem .34rem; font-size: .875rem; }
   .bar__cta { padding: .4rem .65rem .36rem; font-size: .8rem; letter-spacing: 0; min-height: 2.6rem; }
 }
 
@@ -376,8 +375,8 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
   gap: .8rem;
   margin: 0;
   font-family: 'Rye', Georgia, serif;
-  font-size: clamp(.7rem, 1.1vw, .85rem);
-  letter-spacing: .22em;
+  font-size: clamp(.875rem, 1.1vw, .95rem);
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: #e8c983;
   text-shadow: 0 1px 2px #000;
@@ -586,7 +585,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
     display: block;
     margin: .55rem 0 0;
     font-family: 'Rye', Georgia, serif;
-    font-size: clamp(.72rem, 3.4vw, .86rem);
+    font-size: clamp(.875rem, 3.4vw, .95rem);
     line-height: 1.3;
     letter-spacing: .1em;
     text-transform: uppercase;
@@ -614,27 +613,13 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
     radial-gradient(ellipse 80% 70% at 50% 20%, #1b4634, #13301f 62%, #0d2317 100%);
   box-shadow: inset 0 1px 0 rgba(246, 226, 164, .16), inset 0 0 180px rgba(0, 0, 0, .45), inset 0 -1px 0 rgba(0, 0, 0, .7);
 }
-.wall--ox {
+.wall--ox, .wall--desk, .fareS {
   background:
-    repeating-linear-gradient(135deg, rgba(0, 0, 0, .2) 0 1px, transparent 1px 12px),
-    radial-gradient(ellipse 90% 80% at 50% 0%, #6b1a15, #4c100d 60%, #380b09 100%);
-  box-shadow: inset 0 1px 0 rgba(246, 226, 164, .18), inset 0 0 180px rgba(0, 0, 0, .4), inset 0 -1px 0 rgba(0, 0, 0, .7);
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, .2) 0 2px, transparent 2px 7px, rgba(255, 216, 150, .025) 7px 9px, transparent 9px 23px),
+    linear-gradient(180deg, #2a190b 0%, #221408 45%, #1b0f05 100%);
+  box-shadow: inset 0 1px 0 rgba(246, 226, 164, .18), inset 0 -1px 0 rgba(0, 0, 0, .7);
 }
-.wall--desk {
-  padding-block: clamp(2.2rem, 5vw, 4rem);
-  background:
-    radial-gradient(ellipse 120% 90% at 50% 0%, rgba(38, 84, 62, .9), rgba(20, 48, 34, .5) 60%, transparent 100%),
-    repeating-linear-gradient(90deg, rgba(0, 0, 0, .18) 0 2px, transparent 2px 9px),
-    linear-gradient(180deg, #1f4a39, #143024 62%, #0f2619);
-  box-shadow: inset 0 1px 0 rgba(246, 226, 164, .16), inset 0 -1px 0 rgba(0, 0, 0, .7);
-}
-/* the bill of fare hangs on a wall of the street itself, not on flat brown */
-.fareS {
-  background:
-    linear-gradient(180deg, rgba(58, 28, 10, .82) 0%, rgba(20, 10, 4, .6) 34%, rgba(12, 7, 3, .9) 100%),
-    url(../img/c-rano.webp) center 75% / cover no-repeat,
-    linear-gradient(180deg, #33200f 0%, #2a1a0c 40%, #211306 100%);
-}
+.wall--desk { padding-block: clamp(2.2rem, 5vw, 4rem); }
 /* every wall starts under a wooden moulding, so the bands read as rooms, not stripes */
 .wall::before {
   content: '';
@@ -743,7 +728,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
   line-height: 1.1;
   text-align: center;
 }
-.tag span { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; }
+.tag span { font-size: .875rem; letter-spacing: .12em; text-transform: uppercase; }
 .tag b { font-size: 1.35rem; font-family: 'Sancreek', Georgia, serif; font-weight: 400; }
 
 .plaque {
@@ -775,13 +760,13 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
   color: #2a1705;
   text-shadow: 0 1px 0 rgba(255, 250, 225, .6);
 }
-.plaque__price span { font-size: 1.02rem; color: #4a2f0a; }
+.plaque__price span { font-size: 1.02rem; color: #2e1c05; }
 .plaque__flo { width: clamp(130px, 24vw, 200px); color: rgba(58, 34, 6, .55); margin: .1rem 0 .3rem; }
 .plaque__list { display: grid; gap: .35rem; }
 .plaque__list > div { display: flex; align-items: baseline; gap: .5rem; border-bottom: 1px dotted rgba(74, 46, 6, .45); padding-bottom: .3rem; }
-.plaque__list dt { color: #4a2f0a; }
+.plaque__list dt { color: #2e1c05; }
 .plaque__list dd { margin-left: auto; font-weight: 700; color: #2a1705; text-align: right; }
-.plaque__note { font-size: .92rem; color: #4a2f0a; font-style: italic; margin-top: .2rem; }
+.plaque__note { font-size: .95rem; color: #2e1c05; font-style: italic; margin-top: .2rem; }
 .screw {
   position: absolute;
   width: 14px;
@@ -899,7 +884,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
   .card article { min-height: 0; padding: 1.4rem .55rem 1rem; gap: .3rem; }
   .card__art { width: clamp(62px, 17vw, 84px); }
   .card__h { font-size: 1rem; }
-  .card__p { font-size: .84rem; line-height: 1.4; }
+  .card__p { font-size: .875rem; line-height: 1.4; }
   .card__pip { width: 10px; height: 10px; }
 }
 
@@ -992,7 +977,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
 .pic--wide .pic__frame { aspect-ratio: 11 / 5; }
 .pic figcaption {
   font-family: 'Rye', Georgia, serif;
-  font-size: .76rem;
+  font-size: .875rem;
   letter-spacing: .07em;
   text-transform: uppercase;
   color: #d9c194;
@@ -1012,13 +997,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
   gap: .65rem;
   text-align: center;
 }
-.label__top {
-  font-family: 'Rye', Georgia, serif;
-  font-size: .76rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: #8a2a1e;
-}
+
 .label blockquote p {
   font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
@@ -1030,7 +1009,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
 .label__flo { width: min(15rem, 80%); color: rgba(138, 96, 34, .5); justify-self: center; }
 .label figcaption { font-size: .9rem; color: #5a4529; }
 .label figcaption b { color: #2a1708; }
-.label figcaption span { font-size: .84rem; }
+.label figcaption span { font-size: .875rem; }
 .label__c {
   position: absolute;
   width: clamp(34px, 5vw, 52px);
@@ -1044,26 +1023,8 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
 .label__c--br { bottom: 6px; right: 6px; transform: scale(-1); }
 @media (max-width: 58rem) { .label { transform: none; } }
 
-.shingles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: .5rem .55rem;
-  margin-top: clamp(2.2rem, 5vw, 3.4rem);
-  padding-top: clamp(1.6rem, 4vw, 2.4rem);
-  border-top: 1px solid rgba(246, 226, 164, .16);
-}
-.shingles li {
-  position: relative;
-  padding: .4rem 1rem .35rem;
-  background: linear-gradient(180deg, #6b4522, #45280f);
-  color: #f1e3c2;
-  font-size: .94rem;
-  border: 1px solid #140902;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(246, 226, 164, .22);
-}
-.shingles li:nth-child(odd) { transform: rotate(-.6deg); }
-.shingles li:nth-child(even) { transform: rotate(.7deg); }
+
+
 
 /* -------------------------------------------------------------- bill of fare */
 
@@ -1099,13 +1060,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
   margin-bottom: clamp(1.2rem, 3vw, 2rem);
   border-bottom: 2px solid rgba(120, 92, 48, .35);
 }
-.menu__pre {
-  font-family: 'Rye', Georgia, serif;
-  font-size: .76rem;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: #8a2a1e;
-}
+
 .menu__h {
   color: #5b1512;
   background: none;
@@ -1166,7 +1121,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
 .fare__sum { grid-column: 1; grid-row: 4; color: #3d2c19; max-width: 62ch; }
 .fare__acts { grid-column: 1; grid-row: 5; align-self: start; display: flex; flex-wrap: wrap; gap: .15rem .85rem; font-size: .94rem; color: #4a3a24; }
 .fare__acts li { padding-left: .85rem; position: relative; }
-.fare__acts li::before { content: '✦'; position: absolute; left: 0; top: .02em; font-size: .72em; color: #a5782a; }
+.fare__acts li::before { content: ''; position: absolute; left: .1em; top: .55em; width: .38em; height: .38em; background: #a5782a; transform: rotate(45deg); }
 .fare__facts {
   grid-column: 2;
   grid-row: 4;
@@ -1179,7 +1134,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
 .fare__facts div { display: flex; align-items: baseline; justify-content: space-between; gap: .6rem; padding-bottom: .25rem; border-bottom: 1px dotted rgba(120, 92, 48, .45); }
 .fare__facts dt {
   font-family: 'Rye', Georgia, serif;
-  font-size: .72rem;
+  font-size: .875rem;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: #8a6a2c;
@@ -1188,7 +1143,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
 .fare__terms { grid-column: 2; grid-row: 5; align-self: start; display: flex; flex-wrap: wrap; align-items: center; gap: .3rem .4rem; margin-top: .15rem; font-size: .93rem; }
 .fare__terms > span {
   font-family: 'Rye', Georgia, serif;
-  font-size: .72rem;
+  font-size: .875rem;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: #8a6a2c;
@@ -1215,59 +1170,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
   .fare__cta { justify-self: start; margin-top: .5rem; }
 }
 
-.labels {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-  align-items: stretch;
-  gap: clamp(1.1rem, 2.6vw, 1.8rem);
-  max-width: 62rem;
-  margin: clamp(1.8rem, 4vw, 2.8rem) auto 0;
-}
-.labels > li:nth-child(1) { transform: rotate(-.7deg); }
-.labels > li:nth-child(2) { transform: rotate(.5deg) translateY(.35rem); }
-.labels > li:nth-child(3) { transform: rotate(-.4deg); }
-.wl {
-  position: relative;
-  height: 100%;
-  padding: clamp(1.3rem, 2.8vw, 1.8rem);
-  padding-top: clamp(2rem, 3.6vw, 2.4rem);
-  background: linear-gradient(165deg, #f3e8cd, #e6d6b2);
-  color: #2a1708;
-  box-shadow: 0 16px 30px rgba(0, 0, 0, .45), inset 0 0 0 1px rgba(120, 92, 48, .35);
-}
-.wl::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto;
-  height: 1px;
-  background: var(--band, #8a6a2c);
-}
-.wl::after {
-  content: '';
-  position: absolute;
-  top: 13px;
-  left: 50%;
-  translate: -50% 0;
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 34% 28%, #fdf3cd, #b5892f 58%, #5c3c08);
-  box-shadow: 0 1px 2px rgba(60, 38, 4, .6);
-}
-.wl--a { --band: #8a6a2c; }
-.wl--b { --band: #8d1a10; }
-.wl--c { --band: #1f5a3f; }
-.wl h3 {
-  font-family: 'Sancreek', Georgia, serif;
-  font-weight: 400;
-  font-size: 1.15rem;
-  line-height: 1.2;
-  color: #5b1512;
-  margin-bottom: .45rem;
-}
-.wl p { font-size: .96rem; color: #3d2c19; }
-.wl p + p { margin-top: .4rem; }
-.wl a { color: #7a1d1a; }
+
 
 /* ------------------------------------------------------------- guest ledger */
 
@@ -1290,13 +1193,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
   padding-bottom: clamp(.9rem, 2vw, 1.3rem);
   border-bottom: 2px solid rgba(120, 92, 48, .35);
 }
-.ledger__pre {
-  font-family: 'Rye', Georgia, serif;
-  font-size: .74rem;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: #8a2a1e;
-}
+
 .ledger__h {
   font-family: 'Sancreek', Georgia, serif;
   font-weight: 400;
@@ -1309,7 +1206,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
 .ledger .f { gap: clamp(1.4rem, 3.4vw, 2.6rem); }
 .ledger .f-legend {
   font-family: 'Rye', Georgia, serif;
-  font-size: .78rem;
+  font-size: .875rem;
   letter-spacing: .11em;
   text-transform: uppercase;
   color: #7a5a22;
@@ -1379,19 +1276,12 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: radial-gradient(circle at 34% 28%, #f7e2ae, #a5782a 58%, #4a2f0a);
+  background: radial-gradient(circle at 34% 28%, #f7e2ae, #a5782a 58%, #2e1c05);
   box-shadow: 0 3px 4px rgba(0, 0, 0, .55), inset 0 0 0 1px rgba(50, 30, 4, .4);
 }
 .tack--1 { left: 18%; }
 .tack--2 { right: 18%; }
-.bill__pre {
-  font-family: 'Rye', Georgia, serif;
-  font-size: .8rem;
-  letter-spacing: .17em;
-  text-transform: uppercase;
-  color: #8a2a1e;
-  text-align: center;
-}
+
 .bill__h {
   display: flex;
   flex-wrap: wrap;
@@ -1445,7 +1335,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
   border: 1px solid rgba(120, 92, 48, .6);
   border-radius: 2px;
   font-family: 'Rye', Georgia, serif;
-  font-size: .78rem;
+  font-size: .875rem;
   letter-spacing: .05em;
   text-transform: uppercase;
   color: #5a4529;
@@ -1577,7 +1467,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
 .foot__h {
   font-family: 'Rye', Georgia, serif;
   font-weight: 400;
-  font-size: .78rem;
+  font-size: .875rem;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: #d9c194;
@@ -1623,3 +1513,47 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
   .tag b { font-size: 1.1rem; }
   .sign__cta { flex-direction: column; align-items: stretch; }
 }
+
+/* ---------- second half of the bill of fare ---------- */
+.menu__foot { margin-top: 1.4rem; font-style: italic; color: #4a3520; text-align: center; max-width: 52ch; margin-inline: auto; }
+.extra { margin-top: clamp(2rem, 4vw, 3rem); padding-top: clamp(1.4rem, 3vw, 2rem); border-top: 3px double rgba(120, 92, 48, .55); }
+.extra__h { text-align: center; font: 400 clamp(1.6rem, 3vw, 2.2rem)/1.1 'Sancreek', 'Playfair Display', Georgia, serif; color: #5b1512; margin-bottom: 1.2rem; }
+.extra__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem clamp(1.5rem, 4vw, 3rem); }
+@media (max-width: 44rem) { .extra__list { grid-template-columns: 1fr; } }
+.extra__list li { display: grid; gap: .4rem; align-content: start; }
+.extra__list p { color: #3d2c19; }
+.extra__list a { color: #7a1d1a; font-weight: 700; }
+.extra__row { display: flex; align-items: baseline; gap: .6rem; }
+.extra__row b { font: 700 1.2rem/1.2 'Playfair Display', Georgia, serif; color: #2a1708; }
+.extra__row i { flex: 1 1 1rem; min-width: 1rem; border-bottom: 2px dotted rgba(120, 92, 48, .6); }
+.extra__row span { font: 400 1.15rem/1.2 'Sancreek', 'Playfair Display', Georgia, serif; color: #5b1512; white-space: nowrap; }
+.tbc { font-size: .9rem; font-style: italic; color: #6b5230; }
+::selection { background: #e3b75a; color: #1c0f05; }
+html { scrollbar-color: #6a4a24 #160d05; caret-color: #e3b75a; accent-color: #8a2a1e; }
+
+/* the back room: story and playbill hang on oxblood, without the old pinstripe */
+.wall--ox {
+  background: radial-gradient(ellipse 90% 80% at 50% 0%, #5e1813, #43100c 60%, #300a08 100%);
+  box-shadow: inset 0 1px 0 rgba(246, 226, 164, .18), inset 0 0 180px rgba(0, 0, 0, .4), inset 0 -1px 0 rgba(0, 0, 0, .7);
+}
+
+/* the register: entries are written on the ruled page, the summary is the bar tab */
+.ledger .f-input { background: rgba(255, 253, 244, .55); border-width: 0 0 1.5px; border-color: #8a6a3c; box-shadow: none; border-radius: 0; }
+.ledger select.f-input, .ledger textarea.f-input { border-width: 1px; }
+.ledger .f-side {
+  --f-side-bg: #fbf5e3;
+  color: #2a1708;
+  padding: 1.5rem 1.4rem 2.2rem;
+  background: #fbf5e3;
+  border: 0;
+  box-shadow: 0 16px 28px -14px rgba(0, 0, 0, .55), 0 1px 2px rgba(0, 0, 0, .25);
+  transform: rotate(-.8deg);
+  -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / .9rem 100%;
+          mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / .9rem 100%;
+}
+.ledger .f-side__h { color: #5b1512; font-size: 1.5rem; text-align: center; padding-bottom: .7rem; border-bottom: 1.5px dashed #8a6a3c; }
+.ledger .f-sum div { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-bottom: .5rem; border-bottom: 1px dotted rgba(120, 92, 48, .6); }
+.ledger .f-sum dt { color: #6b5230; }
+.ledger .f-sum dd { color: #2a1708; text-align: right; }
+.ledger .f-note { color: #6b5230; text-align: center; font-style: italic; }
+@media (max-width: 56rem) { .ledger .f-side { transform: none; } }
