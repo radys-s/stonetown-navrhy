@@ -391,6 +391,7 @@ select.f-input, textarea.f-input { border-width: 1.5px; }
 .foot__name { font: 400 2.4rem/1 var(--wood-type); color: var(--paper); }
 .foot__h { font: 800 1.2rem/1.2 var(--cond); letter-spacing: .06em; text-transform: uppercase; color: #f1e2bf; }
 .foot a { color: #f6ead0; }
+.foot__note { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--pad) 2rem; color: #c9b88f; font-size: .9rem; }
 .foot a:focus-visible { outline-color: var(--paper); }
 
 @media (max-width: 40rem) {
