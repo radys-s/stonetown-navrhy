@@ -436,8 +436,8 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
   z-index: 5;
   translate: -50% 0;
   display: flex;
-  width: min(34rem, 62vw);
-  height: clamp(9.5rem, 20vh, 14.5rem);
+  width: min(28rem, 56vw);
+  height: clamp(7rem, 15vh, 10.5rem);
   perspective: 1100px;
   perspective-origin: 50% 30%;
   pointer-events: none;
@@ -579,7 +579,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
     background:
       radial-gradient(ellipse 70% 56% at 50% 44%, rgba(17, 9, 4, .55), rgba(17, 9, 4, .3) 62%, rgba(17, 9, 4, 0) 100%);
   }
-  .doors { --open: 40deg; height: 9.5rem; }
+  .doors { --open: 40deg; height: 7rem; }
   .sign__ribbon { display: none; }
   .sign__sub {
     display: block;
@@ -707,7 +707,7 @@ a { text-underline-offset: .18em; text-decoration-thickness: .06em; }
 }
 .board__list { display: grid; gap: .35rem; color: #cdd9c9; max-width: 34ch; }
 .board__list li { padding-left: 1.1rem; position: relative; }
-.board__list li::before { content: '✦'; position: absolute; left: 0; top: .05em; color: #b9cfb9; font-size: .8em; }
+.board__list li::before { content: ''; position: absolute; left: .1em; top: .6em; width: .38em; height: .38em; background: #b9cfb9; transform: rotate(45deg); }
 .board__slate .btn { margin-top: .5rem; }
 
 .tag {
@@ -1557,3 +1557,7 @@ html { scrollbar-color: #6a4a24 #160d05; caret-color: #e3b75a; accent-color: #8a
 .ledger .f-sum dd { color: #2a1708; text-align: right; }
 .ledger .f-note { color: #6b5230; text-align: center; font-style: italic; }
 @media (max-width: 56rem) { .ledger .f-side { transform: none; } }
+
+/* review: the glass sheen and top scrolls compete with the street; two corner marks are enough */
+.hero__glass::before { display: none; }
+.orn--tl, .orn--tr { display: none; }
